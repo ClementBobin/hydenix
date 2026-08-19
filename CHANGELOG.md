@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ClementBobin/hydenix/compare/v1.0.0...v1.1.0) (2026-08-19)
+
+
+### Features
+
+* Update README to indicate maintenance mode ([7df865b](https://github.com/ClementBobin/hydenix/commit/7df865b4f50bcb49390d2acaa6fafcf3331bb4a2))
+
 # 1.0.0 (2026-08-19)
 
 
