@@ -22,7 +22,7 @@
     ./shell.nix
     ./social.nix
     ./spotify.nix
-    ./swww.nix
+    ./awww.nix
     ./terminals.nix
     ./theme.nix
     ./uwsm.nix
