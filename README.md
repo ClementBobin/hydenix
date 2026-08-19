@@ -1,4 +1,4 @@
-
+ 
 > [!CAUTION]
 > hydenix is now in **maintenance mode**. </br>
 > nixpkgs and hyde version updates are halted and issues may go unaddressed.
