@@ -39,7 +39,7 @@ in
         # Additional shader files
         {
           ".config/hypr/shaders/.compiled.cache.glsl" = {
-            source = ./.config/hypr/shaders/.compiled.cache.glsl";
+            source = ./.config/hypr/shaders/.compiled.cache.glsl;
             force = true;
             mutable = true;
           };
