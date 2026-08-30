@@ -20,13 +20,13 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hyde
-      Bibata-Modern-Ice
+      #Bibata-Modern-Ice
       sddm-astronaut
     ];
 
     # Add this section to ensure cursor theme is properly loaded
     environment.sessionVariables = {
-      XCURSOR_THEME = "Bibata-Modern-Ice";
+      #XCURSOR_THEME = "Bibata-Modern-Ice";
       XCURSOR_SIZE = "24";
     };
 
@@ -43,7 +43,7 @@ in
       ];
       settings = {
         Theme = {
-          CursorTheme = "Bibata-Modern-Ice";
+          #CursorTheme = "Bibata-Modern-Ice";
           CursorSize = "24";
         };
         General = {
