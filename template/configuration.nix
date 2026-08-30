@@ -80,5 +80,5 @@
   };
 
   # System Version - Don't change unless you know what you're doing (helps with system upgrades and compatibility)
-  system.stateVersion = "25.05";
+  system.stateVersion = "26.05";
 }

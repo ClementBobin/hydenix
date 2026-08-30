@@ -226,7 +226,7 @@ below are the default options for hydenix. they are in *object format* and any o
         vesktop.enable = true; # enable vesktop module
       };
       spotify.enable = true; # enable spotify module
-      swww.enable = true; # enable swww wallpaper daemon
+      awww.enable = true; # enable awww wallpaper daemon
       terminals = {
         enable = true; # enable terminals module
         kitty = {

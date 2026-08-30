@@ -9,7 +9,7 @@ let
   cfg = config.hydenix.hm.awww;
 in
 {
-  options.hydenix.hm.swww = {
+  options.hydenix.hm.awww = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = config.hydenix.hm.enable;

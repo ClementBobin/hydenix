@@ -20,7 +20,7 @@ in
         else
           {
             text = ''
-              ${lib.readFile "${pkgs.hyde}/Configs/.config/hypr/windowrules.conf"}
+              ${lib.readFile ./windowrules.conf}
               ${cfg.windowrules.extraConfig}
             '';
             force = true;

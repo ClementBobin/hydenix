@@ -22,12 +22,6 @@ in
         default = true;
         description = "Enable vscode";
       };
-
-      wallbash = lib.mkOption {
-        type = lib.types.bool;
-        default = true;
-        description = "Enable wallbash extension for vscode";
-      };
     };
 
     neovim = lib.mkOption {
@@ -100,15 +94,6 @@ in
           source = "${pkgs.hyde}/Configs/.config/VSCodium/User/settings.json";
           force = true;
           mutable = true;
-        };
-      })
-      (lib.mkIf cfg.vscode.wallbash {
-        # Link the wallbash extension from hyde package
-        ".vscode/extensions/prasanthrangan.wallbash" = {
-          source = "${pkgs.hyde}/share/vscode/extensions/prasanthrangan.wallbash";
-          recursive = true;
-          mutable = true;
-          force = true;
         };
       })
 
