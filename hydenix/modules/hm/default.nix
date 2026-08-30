@@ -20,8 +20,6 @@
     ./rofi.nix
     ./screenshots.nix
     ./shell.nix
-    ./social.nix
-    ./spotify.nix
     ./awww.nix
     ./terminals.nix
     ./theme.nix
@@ -37,10 +35,11 @@
 
   config = {
     hydenix.hm.enable = lib.mkDefault false;
-    home.stateVersion = "26.05";
 
     # let home-manager control itself
     programs.home-manager.enable = true;
+
+    home.stateVersion = "26.05";
   };
 
 }

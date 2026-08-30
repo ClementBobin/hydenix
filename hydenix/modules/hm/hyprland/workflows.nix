@@ -9,7 +9,7 @@ let
   cfg = config.hydenix.hm.hyprland;
 
   workflowPresets = [
-    "default"
+    "01-default"
     "editing"
     "gaming"
     "powersaver"
@@ -19,27 +19,10 @@ in
 {
   config = lib.mkIf (cfg.enable && cfg.workflows.enable) {
     home.file = lib.mkMerge [
-      # Active workflow
-      {
-        ".config/hypr/workflows.conf" =
-          if cfg.workflows.overrides ? ${cfg.workflows.active} then
-            {
-              text = cfg.workflows.overrides.${cfg.workflows.active};
-              force = true;
-              mutable = true;
-            }
-          else
-            {
-              source = ./.config/hypr/workflows/${cfg.workflows.active}.conf;
-              force = true;
-              mutable = true;
-            };
-      }
-
       # All workflow presets (with overrides)
       (lib.listToAttrs (
         map (workflow: {
-          name = ".config/hypr/workflows/${workflow}.conf";
+          name = ".local/share/hypr/lua/workflows/${workflow}.lua";
           value =
             if cfg.workflows.overrides ? ${workflow} then
               {
@@ -48,14 +31,14 @@ in
               }
             else
               {
-                source = ./.config/hypr/workflows/${workflow}.conf;
+                source = "${pkgs.hyde}/Configs/.local/share/hypr/lua/workflows/${workflow}.lua";
               };
         }) workflowPresets
       ))
 
       # Custom workflows (exclude the standard presets)
       (lib.mapAttrs' (name: content: {
-        name = ".config/hypr/workflows/${name}.conf";
+        name = ".local/share/hypr/lua/workflows/${name}.lua";
         value = {
           text = content;
           force = true;

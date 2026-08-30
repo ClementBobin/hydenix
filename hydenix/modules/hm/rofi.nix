@@ -38,16 +38,8 @@ in
     '';
 
     home.file = {
-
-      ".local/share/hyde/rofi/assets/" = {
-        source = "${pkgs.hyde}/Configs/.local/share/hyde/rofi/assets/";
-        recursive = true;
-        force = true;
-        mutable = true;
-      };
-
-      ".local/share/hyde/rofi/themes/" = {
-        source = "${pkgs.hyde}/Configs/.local/share/hyde/rofi/themes/";
+      ".local/share/hyde/rofi/" = {
+        source = "${pkgs.hyde}/Configs/.local/share/hyde/rofi/";
         recursive = true;
         force = true;
         mutable = true;

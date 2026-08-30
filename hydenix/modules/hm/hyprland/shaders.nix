@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -30,7 +31,7 @@ in
           map (shader: {
             name = ".config/hypr/shaders/${shader}.frag";
             value = {
-              source = ./.config/hypr/shaders/${shader}.frag;
+              source = "${pkgs.hyde}/Configs/.config/hypr/shaders/${shader}.frag";
             };
           }) standardShaders
         ))
@@ -38,24 +39,12 @@ in
         # Additional shader files
         {
           ".config/hypr/shaders/.compiled.cache.glsl" = {
-            source = ./.config/hypr/shaders/.compiled.cache.glsl;
-            force = true;
-            mutable = true;
-          };
-          ".config/hypr/shaders.conf" = {
-            text = ''
-              # name of the shader
-              $SCREEN_SHADER = "${cfg.shaders.active}"
-              # path to the shader
-              $SCREEN_SHADER_PATH = "$XDG_CONFIG_HOME/hypr/shaders/${cfg.shaders.active}.frag"
-              # path to the compiled shader // override this in '../hyde/config.toml'
-              $SCREEN_SHADER_COMPILED = $XDG_CONFIG_HOME/hypr/shaders/.compiled.cache.glsl
-            '';
+            source = "${pkgs.hyde}/Configs/.config/hypr/shaders/.compiled.cache.glsl";
             force = true;
             mutable = true;
           };
           ".config/hypr/shaders/wallbash.inc".source =
-            ./.config/hypr/shaders/wallbash.inc;
+            "${pkgs.hyde}/Configs/.config/hypr/shaders/wallbash.inc";
         }
       ])
 

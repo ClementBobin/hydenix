@@ -30,50 +30,10 @@ in
       description = "Suppress warnings about configuration overrides";
     };
 
-    # Animation configurations
-    animations = {
-      enable = lib.mkEnableOption "animation configurations" // {
-        default = cfg.enable;
-      };
-      preset = lib.mkOption {
-        type = lib.types.str;
-        default = "standard";
-        description = "Animation preset to use";
-        example = lib.literalExpression ''
-          "standard" # any string in overrides or default: "LimeFrenzy", "classic", "diablo-1", "diablo-2", "disable", "dynamic", "end4", "fast", "high", "ja", "me-1", "me-2", "minimal-1", "minimal-2", "moving", "optimized", "standard", "vertical"
-        '';
-      };
-      extraConfig = lib.mkOption {
-        type = lib.types.lines;
-        default = "";
-        description = "Additional animation configuration";
-      };
-      overrides = lib.mkOption {
-        type = lib.types.attrsOf lib.types.lines;
-        default = { };
-        description = "Override specific animation files by name";
-        example = lib.literalExpression ''
-          {
-            "classic" = '''
-              animation = windows, 1, 5, default
-            ''';
-          }
-        '';
-      };
-    };
-
     # Shader configurations
     shaders = {
       enable = lib.mkEnableOption "shader configurations" // {
         default = cfg.enable;
-      };
-      active = lib.mkOption {
-        type = lib.types.str;
-        default = "disable";
-        description = "Active shader preset";
-        example = lib.literalExpression ''
-          "disable" # any string in overrides or default: "blue-light-filter", "color-vision", "custom", "grayscale", "invert-colors", "oled", "oled-saver", "paper", "vibrance", "wallbash"
-        '';
       };
       overrides = lib.mkOption {
         type = lib.types.attrsOf lib.types.lines;
@@ -94,14 +54,6 @@ in
     workflows = {
       enable = lib.mkEnableOption "workflow configurations" // {
         default = cfg.enable;
-      };
-      active = lib.mkOption {
-        type = lib.types.str;
-        default = "default";
-        description = "Active workflow preset";
-        example = lib.literalExpression ''
-          "default" # any string in overrides or default: "editing", "gaming", "powersaver", "snappy"
-        '';
       };
       overrides = lib.mkOption {
         type = lib.types.attrsOf lib.types.lines;
@@ -165,52 +117,6 @@ in
         type = lib.types.nullOr lib.types.lines;
         default = null;
         description = "Complete window rules configuration override";
-      };
-    };
-
-    # NVIDIA configurations
-    nvidia = {
-      enable = lib.mkEnableOption "NVIDIA configurations" // {
-        default = config.hardware.nvidia.enabled or false;
-      };
-      extraConfig = lib.mkOption {
-        type = lib.types.lines;
-        default = "";
-        description = "Additional NVIDIA configuration";
-      };
-      overrideConfig = lib.mkOption {
-        type = lib.types.nullOr lib.types.lines;
-        default = null;
-        description = "Complete NVIDIA configuration override";
-      };
-    };
-
-    # Pyprland configurations
-    pyprland = {
-      enable = lib.mkEnableOption "pyprland configurations" // {
-        default = cfg.enable;
-      };
-      extraConfig = lib.mkOption {
-        type = lib.types.lines;
-        default = "";
-        description = "Additional pyprland configuration";
-      };
-      overrideConfig = lib.mkOption {
-        type = lib.types.nullOr lib.types.lines;
-        default = null;
-        description = "Complete pyprland configuration override";
-      };
-    };
-
-    # Monitor configurations
-    monitors = {
-      enable = lib.mkEnableOption "monitor configurations" // {
-        default = cfg.enable;
-      };
-      overrideConfig = lib.mkOption {
-        type = lib.types.nullOr lib.types.lines;
-        default = null;
-        description = "Complete monitor configuration override";
       };
     };
   };

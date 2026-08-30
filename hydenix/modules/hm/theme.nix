@@ -4,7 +4,7 @@
   pkgs,
   ...
 }:
-
+# TODO: relook
 let
   cfg = config.hydenix.hm.theme;
 

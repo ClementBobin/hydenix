@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (cfg.enable && cfg.windowrules.enable) {
     home.file = {
-      ".config/hypr/windowrules.conf" =
+      ".local/share/hypr/lua/window_rules.lua" =
         if cfg.windowrules.overrideConfig != null then
           {
             text = cfg.windowrules.overrideConfig;
@@ -20,7 +20,7 @@ in
         else
           {
             text = ''
-              ${lib.readFile ./.config/hypr/windowrules.conf}
+              ${lib.readFile "${pkgs.hyde}/Configs/.local/share/hypr/lua/window_rules.lua"}
               ${cfg.windowrules.extraConfig}
             '';
             force = true;

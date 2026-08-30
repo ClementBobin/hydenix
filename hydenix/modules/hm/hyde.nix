@@ -22,7 +22,6 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       hyde
-      #Bibata-Modern-Ice
       Tela-circle-dracula
       kdePackages.kconfig # TODO: not sure if this is still needed
       wf-recorder # screen recorder for wlroots-based compositors such as sway
@@ -35,7 +34,7 @@ in
 
     # ensures hyprland config is available in session as per hyde uwsm update
     home.sessionVariables = {
-      HYPRLAND_CONFIG = "${config.xdg.dataHome}/hypr/hyprland.conf";
+      HYPRLAND_CONFIG = "${config.xdg.dataHome}/hypr/hyprland.lua";
     };
 
     fonts.fontconfig.enable = true;
@@ -147,6 +146,7 @@ in
         mutable = true;
         recursive = true;
       };
+      # TODO: move into its own things
       ".config/MangoHud/MangoHud.conf" = {
         source = "${pkgs.hyde}/Configs/.config/MangoHud/MangoHud.conf";
       };

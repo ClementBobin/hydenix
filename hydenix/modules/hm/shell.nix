@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.hydenix.hm.shell;
+  cfg = config.hydenix.hm.shell; #TODO
 in
 {
   options.hydenix.hm.shell = {

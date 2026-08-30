@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf (cfg.enable && cfg.keybindings.enable) {
     home.file = {
-      ".config/hypr/keybindings.conf" =
+      ".local/share/hypr/lua/key_binds.lua" =
         if cfg.keybindings.overrideConfig != null then
           {
             text = cfg.keybindings.overrideConfig;
@@ -20,7 +20,7 @@ in
         else
           {
             text = ''
-              ${lib.readFile ./.config/hypr/keybindings.conf}
+              ${lib.readFile "${pkgs.hyde}/Configs/.local/share/hypr/lua/key_binds.lua"}
               ${cfg.keybindings.extraConfig}
             '';
             force = true;
