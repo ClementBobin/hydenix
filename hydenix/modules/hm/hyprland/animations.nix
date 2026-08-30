@@ -46,7 +46,7 @@ in
             }
           else
             {
-              source = "${pkgs.hyde}/Configs/.config/hypr/animations/${cfg.animations.preset}.conf";
+              source = ./hypr/animations/${cfg.animations.preset}.conf;
               force = true;
               mutable = true;
             };
@@ -64,7 +64,7 @@ in
               }
             else
               {
-                source = "${pkgs.hyde}/Configs/.config/hypr/animations/${preset}.conf";
+                source = ./hypr/animations/${preset}.conf;
               };
         }) animationPresets
       ))
