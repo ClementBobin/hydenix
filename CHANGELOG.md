@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/ClementBobin/hydenix/compare/v1.5.0...v1.5.1) (2026-08-30)
+
+
+### Bug Fixes
+
+* correct syntax error in shader file source path ([df6d7c9](https://github.com/ClementBobin/hydenix/commit/df6d7c97e0580ae6c33b0806be62fce6a68363dc))
+
 # [1.5.0](https://github.com/ClementBobin/hydenix/compare/v1.4.0...v1.5.0) (2026-08-30)
 
 
