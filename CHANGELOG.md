@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ClementBobin/hydenix/compare/v1.2.0...v1.3.0) (2026-08-30)
+
+
+### Features
+
+* comment out Bibata-Modern-Ice package in overlay.nix ([d63c1c1](https://github.com/ClementBobin/hydenix/commit/d63c1c13608649dbe5b91de5cd90c311b39710e8))
+
 # [1.2.0](https://github.com/ClementBobin/hydenix/compare/v1.1.0...v1.2.0) (2026-08-30)
 
 
