@@ -14,7 +14,6 @@ let
     "disable"
     "grayscale"
     "invert-colors"
-    "oled"
     "oled-saver"
     "paper"
     "vibrance"
