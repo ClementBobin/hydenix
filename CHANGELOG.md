@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ClementBobin/hydenix/compare/v1.1.0...v1.2.0) (2026-08-30)
+
+
+### Features
+
+* update dependencies and configurations for NixOS 26.05 ([41fddb5](https://github.com/ClementBobin/hydenix/commit/41fddb5d8703325bd4cde2938a89e518990a98a2))
+
 # [1.1.0](https://github.com/ClementBobin/hydenix/compare/v1.0.0...v1.1.0) (2026-08-19)
 
 
