@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/ClementBobin/hydenix/compare/v1.5.2...v1.5.3) (2026-08-30)
+
+
+### Bug Fixes
+
+* update qt5ct and qt6ct color configuration paths to use wallbash.conf ([d2f5545](https://github.com/ClementBobin/hydenix/commit/d2f5545cd0b582629f8cb5476946e8f42234d587))
+
 ## [1.5.2](https://github.com/ClementBobin/hydenix/compare/v1.5.1...v1.5.2) (2026-08-30)
 
 
