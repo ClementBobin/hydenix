@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/ClementBobin/hydenix/compare/v1.3.0...v1.4.0) (2026-08-30)
+
+
+### Features
+
+* comment out Bibata-Modern-Ice package in hyde.nix ([74a1b33](https://github.com/ClementBobin/hydenix/commit/74a1b33a292503194090fe1b9d2d64f5599dced7))
+
 # [1.3.0](https://github.com/ClementBobin/hydenix/compare/v1.2.0...v1.3.0) (2026-08-30)
 
 
