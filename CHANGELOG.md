@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/ClementBobin/hydenix/compare/v1.4.0...v1.5.0) (2026-08-30)
+
+
+### Features
+
+* comment out Bibata-Modern-Ice package and cursor theme in sddm.nix ([67c7be3](https://github.com/ClementBobin/hydenix/commit/67c7be30fdf7a51a576545eddb12f616a4c95455))
+
 # [1.4.0](https://github.com/ClementBobin/hydenix/compare/v1.3.0...v1.4.0) (2026-08-30)
 
 
