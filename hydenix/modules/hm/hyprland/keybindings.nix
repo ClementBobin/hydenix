@@ -20,7 +20,7 @@ in
         else
           {
             text = ''
-              ${lib.readFile ./keybindings.conf}
+              ${lib.readFile ./.config/hypr/keybindings.conf}
               ${cfg.keybindings.extraConfig}
             '';
             force = true;

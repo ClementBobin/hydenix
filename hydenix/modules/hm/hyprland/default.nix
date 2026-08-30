@@ -50,7 +50,7 @@ in
 
     home.file = {
       ".local/share/hypr/" = {
-        source = ./hypr;
+        source = ./.local/share/hypr;
         recursive = true;
       };
       ".config/hypr/hyprland.conf" =
@@ -61,7 +61,7 @@ in
           }
         else
           {
-            source = ./hypr/hyprland.conf;
+            source = ./.config/hypr/hyprland.conf;
             force = true;
           };
 

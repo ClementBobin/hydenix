@@ -20,7 +20,7 @@ in
         else
           {
             text = ''
-              ${lib.readFile ./hypr/windowrules.conf}
+              ${lib.readFile ./.config/hypr/windowrules.conf}
               ${cfg.windowrules.extraConfig}
             '';
             force = true;
