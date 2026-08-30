@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/ClementBobin/hydenix/compare/v1.5.1...v1.5.2) (2026-08-30)
+
+
+### Bug Fixes
+
+* remove obsolete shader "oled" from standardShaders list ([48c283d](https://github.com/ClementBobin/hydenix/commit/48c283d2dbe5d1908aa337c3c52e4be6bb803616))
+
 ## [1.5.1](https://github.com/ClementBobin/hydenix/compare/v1.5.0...v1.5.1) (2026-08-30)
 
 
