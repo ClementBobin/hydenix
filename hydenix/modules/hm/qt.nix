@@ -39,19 +39,9 @@ in
       ".config/menus/applications.menu" = {
         source = "${pkgs.hyde}/Configs/.config/menus/applications.menu";
       };
-
-      ".config/Kvantum/wallbash/wallbash.kvconfig" = {
-        source = "${pkgs.hyde}/Configs/.config/Kvantum/wallbash/wallbash.kvconfig";
-        force = true;
-        mutable = true;
-      };
-      ".config/Kvantum/wallbash/wallbash.svg" = {
-        source = "${pkgs.hyde}/Configs/.config/Kvantum/wallbash/wallbash.svg";
-        force = true;
-        mutable = true;
-      };
-      ".config/Kvantum/kvantum.kvconfig" = {
-        source = "${pkgs.hyde}/Configs/.config/Kvantum/kvantum.kvconfig";
+      ".config/Kvantum/" = {
+        source = "${pkgs.hyde}/Configs/.config/Kvantum/";
+        recursive = true;
         force = true;
         mutable = true;
       };
