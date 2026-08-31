@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/ClementBobin/hydenix/compare/v1.5.3...v1.6.0) (2026-08-31)
+
+
+### Features
+
+* add keyboard layout options for hyprland and lockscreen modules ([eb0b311](https://github.com/ClementBobin/hydenix/commit/eb0b3119eda45b407451fed4c33a62e28e9d8307))
+
 ## [1.5.3](https://github.com/ClementBobin/hydenix/compare/v1.5.2...v1.5.3) (2026-08-30)
 
 
