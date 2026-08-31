@@ -17,7 +17,7 @@ let
   ];
 in
 {
-  config = lib.mkIf (cfg.enable && cfg.workflows.enable) {
+  config = lib.mkIf (cfg.enable) {
     home.file = lib.mkMerge [
       # All workflow presets (with overrides)
       (lib.listToAttrs (

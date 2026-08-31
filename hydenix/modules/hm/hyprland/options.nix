@@ -14,15 +14,10 @@ in
       default = config.hydenix.hm.enable;
       description = "Enable hyprland module";
     };
-    extraConfig = lib.mkOption {
-      type = lib.types.lines;
-      default = "";
-      description = "Extra config appended to userprefs.conf";
-    };
     overrideMain = lib.mkOption {
       type = lib.types.nullOr lib.types.lines;
       default = null;
-      description = "Complete override of hyprland.conf";
+      description = "Complete override of hyprland.lua";
     };
     suppressWarnings = lib.mkOption {
       type = lib.types.bool;
@@ -32,9 +27,6 @@ in
 
     # Shader configurations
     shaders = {
-      enable = lib.mkEnableOption "shader configurations" // {
-        default = cfg.enable;
-      };
       overrides = lib.mkOption {
         type = lib.types.attrsOf lib.types.lines;
         default = { };
@@ -52,9 +44,6 @@ in
 
     # Workflow configurations
     workflows = {
-      enable = lib.mkEnableOption "workflow configurations" // {
-        default = cfg.enable;
-      };
       overrides = lib.mkOption {
         type = lib.types.attrsOf lib.types.lines;
         default = { };
@@ -71,9 +60,6 @@ in
 
     # Hypridle configurations
     hypridle = {
-      enable = lib.mkEnableOption "hypridle configurations" // {
-        default = cfg.enable;
-      };
       extraConfig = lib.mkOption {
         type = lib.types.lines;
         default = "";
@@ -88,9 +74,6 @@ in
 
     # Keybindings configurations
     keybindings = {
-      enable = lib.mkEnableOption "keybindings configurations" // {
-        default = cfg.enable;
-      };
       extraConfig = lib.mkOption {
         type = lib.types.lines;
         default = "";
@@ -105,9 +88,6 @@ in
 
     # Window rules configurations
     windowrules = {
-      enable = lib.mkEnableOption "window rules configurations" // {
-        default = cfg.enable;
-      };
       extraConfig = lib.mkOption {
         type = lib.types.lines;
         default = "";

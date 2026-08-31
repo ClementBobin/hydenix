@@ -7,35 +7,12 @@
 
 let
   cfg = config.hydenix.hm.hyprland;
-
-  standardShaders = [
-    "blue-light-filter"
-    "color-vision"
-    "custom"
-    "disable"
-    "grayscale"
-    "invert-colors"
-    "oled-saver"
-    "paper"
-    "vibrance"
-    "wallbash"
-  ];
 in
 {
-  config = lib.mkIf (cfg.enable && cfg.shaders.enable) {
+  config = lib.mkIf (cfg.enable) {
     home.file = lib.mkMerge [
       # Standard shaders (generated from list)
       (lib.mkMerge [
-        # Generate standard shader files from list
-        (lib.listToAttrs (
-          map (shader: {
-            name = ".config/hypr/shaders/${shader}.frag";
-            value = {
-              source = "${pkgs.hyde}/Configs/.config/hypr/shaders/${shader}.frag";
-            };
-          }) standardShaders
-        ))
-
         # Additional shader files
         {
           ".config/hypr/shaders/.compiled.cache.glsl" = {
@@ -43,8 +20,6 @@ in
             force = true;
             mutable = true;
           };
-          ".config/hypr/shaders/wallbash.inc".source =
-            "${pkgs.hyde}/Configs/.config/hypr/shaders/wallbash.inc";
         }
       ])
 

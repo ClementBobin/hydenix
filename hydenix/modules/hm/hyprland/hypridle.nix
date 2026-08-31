@@ -9,7 +9,7 @@ let
   cfg = config.hydenix.hm.hyprland;
 in
 {
-  config = lib.mkIf (cfg.enable && cfg.hypridle.enable) {
+  config = lib.mkIf (cfg.enable) {
     home.file = {
       ".config/hypr/hypridle.conf" =
         if cfg.hypridle.overrideConfig != null then
