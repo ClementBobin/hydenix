@@ -24,6 +24,14 @@ in
       };
     };
 
+    vscodium = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Enable vscodium";
+      };
+    };
+
     neovim = lib.mkOption {
       type = lib.types.bool;
       default = true;
@@ -52,6 +60,12 @@ in
     programs.vscode = lib.mkIf cfg.vscode.enable {
       enable = true;
       package = pkgs.vscode.fhs;
+      mutableExtensionsDir = true;
+    };
+
+    programs.vscodium = lib.mkIf cfg.vscodium.enable {
+      enable = true;
+      package = pkgs.vscodium.fhs;
       mutableExtensionsDir = true;
     };
 
