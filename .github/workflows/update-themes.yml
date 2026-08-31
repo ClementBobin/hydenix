@@ -22,7 +22,14 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: Run update script
+      - name: Run update sddm themes script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically provided by GitHub Actions
+        run: |
+          chmod +x hydenix/sources/sddm/utils/update-sddm-themes.sh
+          ./hydenix/sources/sddm/utils/update-sddm-themes.sh
+
+      - name: Run update themes script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Automatically provided by GitHub Actions
         run: |
