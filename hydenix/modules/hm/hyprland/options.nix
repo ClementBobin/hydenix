@@ -14,6 +14,12 @@ in
       default = config.hydenix.hm.enable;
       description = "Enable hyprland module";
     };
+    kb_layout = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ "us" ];
+      description = "Keyboard layout(s). Multiple layouts will be cycled through with MOD+K.";
+      example = lib.literalExpression ''[ "fr" "us" ]'';
+    };
     overrideMain = lib.mkOption {
       type = lib.types.nullOr lib.types.lines;
       default = null;
