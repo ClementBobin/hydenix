@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/ClementBobin/hydenix/compare/v1.6.0...v1.7.0) (2026-08-31)
+
+
+### Features
+
+* add new HyDE themes and update default theme configuration ([1440a38](https://github.com/ClementBobin/hydenix/commit/1440a3829841e2729cf117150550f06ff50d6ade))
+* add vscodium support to editors module ([ebeb652](https://github.com/ClementBobin/hydenix/commit/ebeb6523e05fdb656a006fe13129a706d0871184))
+
 # [1.6.0](https://github.com/ClementBobin/hydenix/compare/v1.5.3...v1.6.0) (2026-08-31)
 
 
