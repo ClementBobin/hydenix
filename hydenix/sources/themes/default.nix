@@ -7,22 +7,26 @@ in
 {
 
   "1-Bit" = callTheme ./1-Bit.nix;
-  "Abyssal-Wave" = callTheme ./Abyssal-Wave.nix;
   "AbyssGreen" = callTheme ./AbyssGreen.nix;
+  "Abyssal-Wave" = callTheme ./Abyssal-Wave.nix;
+  "Agency" = callTheme ./Agency.nix;
   "Amethyst-Aura" = callTheme ./Amethyst-Aura.nix;
   "AncientAliens" = callTheme ./AncientAliens.nix;
   "Another World" = callTheme ./Another-World.nix;
   "Bad Blood" = callTheme ./Bad-Blood.nix;
   "BlueSky" = callTheme ./BlueSky.nix;
   "Breezy Autumn" = callTheme ./Breezy-Autumn.nix;
+  "CIA" = callTheme ./CIA.nix;
   "Cat Latte" = callTheme ./Cat-Latte.nix;
   "Catppuccin Latte" = callTheme ./Catppuccin-Latte.nix;
-  "Catppuccin-Macchiato" = callTheme ./Catppuccin-Macchiato.nix;
   "Catppuccin Mocha" = callTheme ./Catppuccin-Mocha.nix;
+  "Catppuccin-Macchiato" = callTheme ./Catppuccin-Macchiato.nix;
+  "Chisa" = callTheme ./Chisa.nix;
   "Code Garden" = callTheme ./Code-Garden.nix;
   "Cosmic Blue" = callTheme ./Cosmic-Blue.nix;
   "Crimson Blade" = callTheme ./Crimson-Blade.nix;
   "Crimson-Blue" = callTheme ./Crimson-Blue.nix;
+  "DanDaDan" = callTheme ./DanDaDan.nix;
   "Decay Green" = callTheme ./Decay-Green.nix;
   "DoomBringers" = callTheme ./DoomBringers.nix;
   "Dracula" = callTheme ./Dracula.nix;
@@ -30,6 +34,7 @@ in
   "Electra" = callTheme ./Electra.nix;
   "Eternal Arctic" = callTheme ./Eternal-Arctic.nix;
   "Ever Blushing" = callTheme ./Ever-Blushing.nix;
+  "FBI" = callTheme ./FBI.nix;
   "Frosted Glass" = callTheme ./Frosted-Glass.nix;
   "Graphite Mono" = callTheme ./Graphite-Mono.nix;
   "Green Lush" = callTheme ./Green-Lush.nix;
@@ -40,15 +45,19 @@ in
   "Ice Age" = callTheme ./Ice-Age.nix;
   "Joker" = callTheme ./Joker.nix;
   "LimeFrenzy" = callTheme ./LimeFrenzy.nix;
+  # "Lock In" = callTheme ./Lock-In.nix;
+  "MI6" = callTheme ./MI6.nix;
   "Mac OS" = callTheme ./Mac-OS.nix;
   "Material Sakura" = callTheme ./Material-Sakura.nix;
   "Monokai" = callTheme ./Monokai.nix;
   "Monterey Frost" = callTheme ./Monterey-Frost.nix;
   "Moonlight" = callTheme ./Moonlight.nix;
+  "Nier" = callTheme ./Nier.nix;
   "Nightbrew" = callTheme ./Nightbrew.nix;
   "Nordic Blue" = callTheme ./Nordic-Blue.nix;
   "Obsidian-Purple" = callTheme ./Obsidian-Purple.nix;
   "One Dark" = callTheme ./One-Dark.nix;
+  "Oregairu" = callTheme ./Oregairu.nix;
   "Oxo Carbon" = callTheme ./Oxo-Carbon.nix;
   "Paranoid Sweet" = callTheme ./Paranoid-Sweet.nix;
   "Peace Of Mind" = callTheme ./Peace-Of-Mind.nix;
@@ -58,10 +67,13 @@ in
   "Rosé Pine" = callTheme ./Rose-Pine.nix;
   "Scarlet Night" = callTheme ./Scarlet-Night.nix;
   "Solarized Dark" = callTheme ./Solarized-Dark.nix;
+  "Soulsborne" = callTheme ./Soulsborne.nix;
   "Synth Wave" = callTheme ./Synth-Wave.nix;
   "Timeless Dream" = callTheme ./Timeless-Dream.nix;
   "Tokyo Night" = callTheme ./Tokyo-Night.nix;
   "Tundra" = callTheme ./Tundra.nix;
   "Vanta Black" = callTheme ./Vanta-Black.nix;
+  # "Vesper" = callTheme ./Vesper.nix;
+  # "Virtual-Witches" = callTheme ./Virtual-Witches.nix;
   "Windows 11" = callTheme ./Windows-11.nix;
 }
