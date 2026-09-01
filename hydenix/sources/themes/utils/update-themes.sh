@@ -4,11 +4,20 @@
 set -eo pipefail
 
 THEMES_DIR="hydenix/sources/themes"
+IGNORE_DIRS="hydenix/sources/themes/archived"
 
 # Find all .nix files in the themes directory, excluding default.nix and files in utils/
 find "$THEMES_DIR" -name "*.nix" ! -name "default.nix" ! -path "*/utils/*" | while read -r NIX_FILE; do
-  echo "Processing $NIX_FILE..."
+  # Skip files in ignored directories
+  for IGNORE_DIR in $IGNORE_DIRS; do
+    if [[ "$NIX_FILE" == "$IGNORE_DIR"* ]]; then
+      echo "Skipping $NIX_FILE (in ignored directory $IGNORE_DIR)"
+      continue 2
+    fi
+  done
 
+  echo "Processing $NIX_FILE..."
+  
   # Extract owner, repo, current rev, and current sha256 from the .nix file
   OWNER=$(grep -oP 'owner = "\K[^"]+' "$NIX_FILE" || true)
   REPO=$(grep -oP 'repo = "\K[^"]+' "$NIX_FILE" || true)
