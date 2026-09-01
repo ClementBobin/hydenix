@@ -6,7 +6,7 @@ mkTheme rec {
     repo = "Oregairu";
     name = name;
     rev = "4e0e51b3a20d7afb7c0b20bb38b8beb0d7db4de0";
-    sha256 = "sha256-cosU+0wJSaQspcjYEZA5dMoZARz+8vQM+49Vyf2JvA8=";
+    sha256 = "sha256-fgA0s9k/YfXqbQ28/gJC3BsPyaTutdsytYEzR6iZp3A=";
   };
   meta = {
     description = "HyDE Theme: Oregairu";

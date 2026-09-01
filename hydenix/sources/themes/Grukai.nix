@@ -6,7 +6,7 @@ mkTheme rec {
     repo = "Grukai";
     rev = "3945b4a154eeabf3cf916360ad182cb80eb2d51f";
     name = name;
-    sha256 = "sha256-N8AErlZCypJSy+P1uO1iYYcdRmpGbiZ1TNhtJvo14Lg=";
+    sha256 = "sha256-5HOyo9uhQHhZZJFhpcwiY4ArWOdnL7yOkVAXhMva9LE=";
   };
   meta = {
     name = name;

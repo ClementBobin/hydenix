@@ -7,7 +7,7 @@ mkTheme rec {
     # locking commit
     rev = "84b2f94e8a340d324deaf293449e5508553eb128";
     name = name;
-    sha256 = "sha256-dYRZKGHO0Q8x4h80Q+PrajaPaY/ZJHZgnp3QVI5d0Lc=";
+    sha256 = "sha256-hhSi7R2MHlcLIMou7Mq91r2iVRkWG7t4ODt6jDzAV/Y=";
   };
   meta = {
     name = name;
