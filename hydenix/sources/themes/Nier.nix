@@ -5,7 +5,7 @@ mkTheme rec {
     owner = "saber-88";
     repo = "Nier";
     name = name;
-    rev = "4e0e51b3a20d7afb7c0b20bb38b8beb0d7db4de0";
+    rev = "bf5b0ac8b778066b781ecf55db46a95af23ed06c";
     sha256 = "sha256-cosU+0wJSaQspcjYEZA5dMoZARz+8vQM+49Vyf2JvA8=";
   };
   meta = {
