@@ -6,7 +6,7 @@ mkTheme rec {
     repo = "Electra";
     rev = "953676ce3962b0ce2bf8bf06c67584f325183e4a";
     name = name;
-    sha256 = "sha256-PG2Vud9BTMuOkT2dHYNl1sDdTFsMLugc5qfWWs/fYFE=";
+    sha256 = "sha256-BpgfGdr0g2ufR+Itl0UIBjftkzt5wQx1CMca60ZyEKk=";
   };
   meta = {
     name = name;

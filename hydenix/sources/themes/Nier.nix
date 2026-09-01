@@ -6,7 +6,7 @@ mkTheme rec {
     repo = "Nier";
     name = name;
     rev = "bf5b0ac8b778066b781ecf55db46a95af23ed06c";
-    sha256 = "sha256-cosU+0wJSaQspcjYEZA5dMoZARz+8vQM+49Vyf2JvA8=";
+    sha256 = "sha256-HI/3u9cTymeKjWME/Dr2si8Rkkb1kImlfs6dfUyoS0Q=";
   };
   meta = {
     description = "HyDE Theme: Nier";

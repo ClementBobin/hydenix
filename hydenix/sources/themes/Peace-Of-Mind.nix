@@ -6,7 +6,7 @@ mkTheme rec {
     repo = "Peace-Of-Mind";
     rev = "632fb4a0cba5af9d01b5b35899629565076ca295";
     name = name;
-    sha256 = "sha256-9FpH9PvykUHzJOp3NkWeExoM2taesHmVmruUge5xH3M=";
+    sha256 = "sha256-Vy0sk52PEo+5w9kOqr3VFVJQ59npHVQHa7hsbWqHvuE=";
   };
   meta = {
     name = name;
