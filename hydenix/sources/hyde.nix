@@ -15,9 +15,9 @@ pkgs.stdenv.mkDerivation {
     rm -rf Configs/.local/lib/hyde/resetxdgportal.sh
     rm -rf Configs/.local/bin/hydectl
     rm -rf Configs/.local/bin/hyde-ipc
-    rm -rf Configs/.local/lib/hyde/hyde-config
-    rm -rf Configs/.local/lib/hyde/hyq
-    rm -rf Configs/.local/bin/hyq
+    #rm -rf Configs/.local/lib/hyde/hyde-config
+    #rm -rf Configs/.local/lib/hyde/hyq
+    #rm -rf Configs/.local/bin/hyq
 
     # Update waybar killall command in all HyDE files
     find . -type f -print0 | xargs -0 sed -i 's/killall waybar/killall .waybar-wrapped/g'
@@ -33,12 +33,16 @@ pkgs.stdenv.mkDerivation {
     find . -type f -executable -print0 | xargs -0 sed -i 's/find "/find -L "/g'
     find . -type f -name "*.sh" -print0 | xargs -0 sed -i 's/find "/find -L "/g'
 
-    # remove lines 187-190 from Configs/.local/lib/hyde/theme.switch.sh
+    # remove lines 128-130 from Configs/.local/lib/hyde/theme.switch.sh
+    # if [ -d /run/current-system/sw/share/themes ]; then
+    #     export themesDir=/run/current-system/sw/share/themes
+    # fi
     # fixes gtk4 themes
-    sed -i '187,190d' Configs/.local/lib/hyde/theme.switch.sh
+    sed -i '128,130d' Configs/.local/lib/hyde/theme.switch.sh
 
     # remove pkill command from rofilaunch.sh
-    sed -i '5d' Configs/.local/lib/hyde/rofilaunch.sh
+    # pkill rofi && exit 0
+    sed -i '2d' Configs/.local/lib/hyde/rofilaunch.sh
 
     # BUILD FONTS
     mkdir -p $out/share/fonts/truetype
