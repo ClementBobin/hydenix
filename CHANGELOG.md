@@ -1,3 +1,19 @@
+# [1.8.0](https://github.com/ClementBobin/hydenix/compare/v1.7.0...v1.8.0) (2026-09-03)
+
+
+### Bug Fixes
+
+* comment out unnecessary removal of hyde configuration files and update theme.switch.sh ([80a4aed](https://github.com/ClementBobin/hydenix/commit/80a4aedac3b85dcf60df9e94c05262eb84f5a87b))
+* comment out unnecessary removal of hyde configuration files and update theme.switch.sh ([01a7166](https://github.com/ClementBobin/hydenix/commit/01a71668af25ff46545b645e30659f4a627cdb78))
+* enhance theme update script to skip ignored directories ([6837961](https://github.com/ClementBobin/hydenix/commit/683796142e7d6f9176905e2fe220bb2bffd58104))
+* update theme repository revisions for 1-Bit, Breezy Autumn, Cosmic Blue, and Crimson-Blue ([786e941](https://github.com/ClementBobin/hydenix/commit/786e941f87d067754f9a6db7b032ee16d59e3b30))
+* update theme repository revisions for Electra, Grukai, Monterey Frost, Moonlight, Nier, Obsidian-Purple, Oregairu, Peace Of Mind, and Timeless Dream ([eed6459](https://github.com/ClementBobin/hydenix/commit/eed645983c685b6cd9318978404ad4fb2c141b39))
+
+
+### Features
+
+* implement SDDM theme management and update script ([66cb6ed](https://github.com/ClementBobin/hydenix/commit/66cb6edc8ec152a749c9c55f3126ec4677eb3888))
+
 # [1.7.0](https://github.com/ClementBobin/hydenix/compare/v1.6.0...v1.7.0) (2026-08-31)
 
 
