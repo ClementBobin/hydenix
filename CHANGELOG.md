@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/ClementBobin/hydenix/compare/v1.9.0...v1.10.0) (2026-09-03)
+
+
+### Features
+
+* update hyprland module imports and include display management ([0d71de0](https://github.com/ClementBobin/hydenix/commit/0d71de09a8acb8e78d5e10c5773d82b2bd8a4c9b))
+
 # [1.9.0](https://github.com/ClementBobin/hydenix/compare/v1.8.0...v1.9.0) (2026-09-03)
 
 
