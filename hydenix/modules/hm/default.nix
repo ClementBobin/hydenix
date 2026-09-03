@@ -21,6 +21,7 @@
     ./rofi.nix
     ./screenshots.nix
     ./shell.nix
+    ./social.nix
     ./awww.nix
     ./terminals.nix
     ./theme.nix
