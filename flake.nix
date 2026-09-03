@@ -19,6 +19,15 @@
       url = "github:HyDE-Project/HyDE/v26.08.21";
       flake = false;
     };
+    spicetify-nix = {
+      url = "github:spicetify/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # HyDE related binaries
     hyq = {
       url = "github:ClementBobin/hyprquery";
