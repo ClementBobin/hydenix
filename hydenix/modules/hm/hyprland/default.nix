@@ -10,13 +10,11 @@ let
 in
 {
   imports = [
-    ./options.nix
     ./assertions.nix
+    ./hypridle.nix
+    ./options.nix
     ./shaders.nix
     ./workflows.nix
-    ./hypridle.nix
-    ./keybindings.nix
-    ./windowrules.nix
   ];
 
   config = lib.mkIf cfg.enable {

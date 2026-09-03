@@ -6,6 +6,7 @@
   imports = [
     ./mutable.nix
     ./comma.nix
+    ./display-management.nix
     ./dolphin.nix
     ./editors.nix
     ./fastfetch.nix
