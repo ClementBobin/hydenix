@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/ClementBobin/hydenix/compare/v1.10.0...v1.11.0) (2026-09-03)
+
+
+### Features
+
+* add social module with Discord and Vesktop options ([ca94571](https://github.com/ClementBobin/hydenix/commit/ca945717c8f70ef6b18cbb73b43cb19b84436c5b))
+
 # [1.10.0](https://github.com/ClementBobin/hydenix/compare/v1.9.0...v1.10.0) (2026-09-03)
 
 
