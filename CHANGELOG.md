@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/ClementBobin/hydenix/compare/v1.13.0...v1.13.1) (2026-09-03)
+
+
+### Bug Fixes
+
+* update spicetify-nix module URL to correct repository ([ffbc798](https://github.com/ClementBobin/hydenix/commit/ffbc79833a5d381f43f07420e06073a22e702dd6))
+
 # [1.13.0](https://github.com/ClementBobin/hydenix/compare/v1.12.0...v1.13.0) (2026-09-03)
 
 
