@@ -10,7 +10,7 @@
     ./dolphin.nix
     ./editors.nix
     ./fastfetch.nix
-    ./firefox.nix
+    ./browser.nix
     ./gtk.nix
     ./git.nix
     ./hyde.nix
@@ -22,6 +22,7 @@
     ./screenshots.nix
     ./shell.nix
     ./social.nix
+    ./spotify.nix
     ./awww.nix
     ./terminals.nix
     ./theme.nix
