@@ -7,14 +7,14 @@
 
 python3.pkgs.buildPythonPackage rec {
   pname = "pyamdgpuinfo";
-  version = "v2.1.6";
+  version = "v2.1.8";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "mark9064";
     repo = "pyamdgpuinfo";
     rev = version;
-    hash = "sha256-waHLLGefLAq9qjuaeLGItAIsgXi2SZPKJzxax4HYQ7U=";
+    hash = "sha256-K4PcIgYn9lC6iHNjL9AQ1dUQEBueWbAF98BPC/xiBgE=";
   };
 
   nativeBuildInputs = with python3.pkgs; [

@@ -19,8 +19,6 @@ let
     hydenix-themes = callPackage ./themes/default.nix { };
     hyq = inputs.hyq.packages.${prev.stdenv.hostPlatform.system}.default;
     hydectl = inputs.hydectl.packages.${prev.stdenv.hostPlatform.system}.default;
-    hyde-ipc = inputs.hyde-ipc.packages.${prev.stdenv.hostPlatform.system}.default;
-    hyde-config = inputs.hyde-config.packages.${prev.stdenv.hostPlatform.system}.default;
   };
 in
 packages
