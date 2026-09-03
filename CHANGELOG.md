@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/ClementBobin/hydenix/compare/v1.12.0...v1.13.0) (2026-09-03)
+
+
+### Features
+
+* add spicetify-nix and zen-browser modules to flake.nix ([8a0c6ce](https://github.com/ClementBobin/hydenix/commit/8a0c6ce722f49f9c8db4714f56bf92aa5337aff1))
+
 # [1.12.0](https://github.com/ClementBobin/hydenix/compare/v1.11.0...v1.12.0) (2026-09-03)
 
 
