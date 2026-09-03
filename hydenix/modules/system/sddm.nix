@@ -7,6 +7,12 @@
 
 let
   cfg = config.hydenix.sddm;
+
+  # Helper function to find a theme package by name, returns null if not found
+  findThemeByName = themeName: pkgs.hydenix-sddm-theme.${themeName} or null;
+
+  # Filter out themes that don't have corresponding packages
+  activeThemePkg = findThemeByName cfg.theme;
 in
 {
   options.hydenix.sddm = {
@@ -15,14 +21,19 @@ in
       default = true;
       description = "Enable sddm module";
     };
+
+    theme = lib.mkOption {
+      type = lib.types.str;
+      default = "sddm-astronaut-theme";
+      description = "Active SDDM theme name";
+    };
   };
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hyde
-      #Bibata-Modern-Ice
       sddm-astronaut
-    ];
+    ] ++ lib.optional (activeThemePkg != null) activeThemePkg;
 
     # Add this section to ensure cursor theme is properly loaded
     environment.sessionVariables = {
@@ -32,7 +43,9 @@ in
 
     services.displayManager.sddm = {
       enable = true;
-      theme = "sddm-astronaut-theme";
+      theme = if activeThemePkg != null
+        then "${activeThemePkg}/share/sddm/themes/${cfg.theme}"
+        else cfg.theme;
       wayland = {
         enable = true;
       };

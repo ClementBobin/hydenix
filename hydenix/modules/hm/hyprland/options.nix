@@ -14,11 +14,10 @@ in
       default = config.hydenix.hm.enable;
       description = "Enable hyprland module";
     };
-    kb_layout = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = [ "us" ];
-      description = "Keyboard layout(s). Multiple layouts will be cycled through with MOD+K.";
-      example = lib.literalExpression ''[ "fr" "us" ]'';
+    extraConfig = lib.mkOption {
+      type = lib.types.lines;
+      default = "";
+      description = "Additional keybindings configuration";
     };
     overrideMain = lib.mkOption {
       type = lib.types.nullOr lib.types.lines;
@@ -80,11 +79,6 @@ in
 
     # Keybindings configurations
     keybindings = {
-      extraConfig = lib.mkOption {
-        type = lib.types.lines;
-        default = "";
-        description = "Additional keybindings configuration";
-      };
       overrideConfig = lib.mkOption {
         type = lib.types.nullOr lib.types.lines;
         default = null;
@@ -94,11 +88,6 @@ in
 
     # Window rules configurations
     windowrules = {
-      extraConfig = lib.mkOption {
-        type = lib.types.lines;
-        default = "";
-        description = "Additional window rules configuration";
-      };
       overrideConfig = lib.mkOption {
         type = lib.types.nullOr lib.types.lines;
         default = null;

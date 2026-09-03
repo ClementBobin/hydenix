@@ -28,8 +28,6 @@ in
       python-pyamdgpuinfo
       hyq
       hydectl
-      hyde-ipc
-      hyde-config
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
@@ -53,33 +51,6 @@ in
         recursive = true;
         force = true;
         mutable = true;
-      };
-
-      ".config/systemd/user/hyde-config.service" = {
-        text = ''
-          [Unit]
-          Description=HyDE Configuration Parser Service
-          Documentation=https://github.com/HyDE-Project/hyde-config
-          After=graphical-session.target
-          PartOf=graphical-session.target
-
-          [Service]
-          Type=simple
-          ExecStart=%h/.local/lib/hyde/hyde-config
-          Restart=on-failure
-          RestartSec=5s
-          Environment="DISPLAY=:0"
-
-          # Make sure the required directories exist
-          ExecStartPre=/usr/bin/env mkdir -p %h/.config/hyde
-          ExecStartPre=/usr/bin/env mkdir -p %h/.local/state/hyde
-
-          [Install]
-          WantedBy=graphical-session.target
-        '';
-      };
-      ".config/systemd/user/hyde-ipc.service" = {
-        source = "${pkgs.hyde}/Configs/.config/systemd/user/hyde-ipc.service";
       };
 
       ".local/bin/hyde-shell" = {

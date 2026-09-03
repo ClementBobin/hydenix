@@ -54,6 +54,15 @@ in
         recursive = true;
         force = true;
       };
+      ".config/hypr/hyprland.lua" = {
+        text = ''
+          ${lib.readFile "${pkgs.hyde}/Configs/.config/hypr/hyprland.lua"}
+
+          ${cfg.extraConfig}
+        '';
+        mutable = true;
+        force = true;
+      };
     };
   };
 }
