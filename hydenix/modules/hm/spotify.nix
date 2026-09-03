@@ -1,7 +1,7 @@
 { pkgs, lib, config, inputs, ... }:
 
 let
-  cfg = config.modules.hydenix.hm.spotify;
+  cfg = config.hydenix.hm.spotify;
 
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 
@@ -20,7 +20,7 @@ in
     inputs.spicetify-nix.homeManagerModules.spicetify
   ];
 
-  options.modules.hydenix.hm.spotify = {
+  options.hydenix.hm.spotify = {
     clients = lib.mkOption {
       type = lib.types.listOf (lib.types.enum (lib.attrNames clientsToPackage));
       default = [];
