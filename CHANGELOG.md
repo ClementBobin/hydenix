@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/ClementBobin/hydenix/compare/v1.11.0...v1.12.0) (2026-09-03)
+
+
+### Features
+
+* consolidate browser configurations and add Spotify module ([f96ab0a](https://github.com/ClementBobin/hydenix/commit/f96ab0aaac5129a7826fcab01e3e8507b1ca8df3))
+
 # [1.11.0](https://github.com/ClementBobin/hydenix/compare/v1.10.0...v1.11.0) (2026-09-03)
 
 
