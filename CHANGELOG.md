@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/ClementBobin/hydenix/compare/v1.13.3...v1.13.4) (2026-09-03)
+
+
+### Bug Fixes
+
+* correct configuration path for Spotify module in spotify.nix ([c9ae87b](https://github.com/ClementBobin/hydenix/commit/c9ae87bdfc2dbaf1b1626351ba120a7b6d549582))
+
 ## [1.13.3](https://github.com/ClementBobin/hydenix/compare/v1.13.2...v1.13.3) (2026-09-03)
 
 
