@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/ClementBobin/hydenix/compare/v1.13.1...v1.13.2) (2026-09-03)
+
+
+### Bug Fixes
+
+* correct package variable from finalPackages to enabledPackages in spotify.nix ([27deff0](https://github.com/ClementBobin/hydenix/commit/27deff0f154aa6aafeac3a2e7e589bcb6920e048))
+
 ## [1.13.1](https://github.com/ClementBobin/hydenix/compare/v1.13.0...v1.13.1) (2026-09-03)
 
 
