@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/ClementBobin/hydenix/compare/v1.8.0...v1.9.0) (2026-09-03)
+
+
+### Features
+
+* add display management utility configuration module ([1ee2a00](https://github.com/ClementBobin/hydenix/commit/1ee2a0067600ccd8c26ea69e05703c971ce3f190))
+
 # [1.8.0](https://github.com/ClementBobin/hydenix/compare/v1.7.0...v1.8.0) (2026-09-03)
 
 
