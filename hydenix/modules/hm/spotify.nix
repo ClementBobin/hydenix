@@ -62,7 +62,7 @@ in
 
   config = lib.mkIf (cfg.clients != []) {
     home = {
-        packages = finalPackages;
+        packages = enabledPackages;
         file = {
             ".config/spotify-flags.conf" = lib.mkIf (lib.elem "spotify" cfg.clients) {
                 source = "${pkgs.hyde}/Configs/.config/spotify-flags.conf";
