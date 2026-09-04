@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/ClementBobin/hydenix/compare/v1.14.0...v1.14.1) (2026-09-04)
+
+
+### Bug Fixes
+
+* update Lua and Luarocks package references in Hyprland configuration ([746bfe7](https://github.com/ClementBobin/hydenix/commit/746bfe77a2db9c53e5e4c62120aa975a5d892985))
+
 # [1.14.0](https://github.com/ClementBobin/hydenix/compare/v1.13.6...v1.14.0) (2026-09-04)
 
 
