@@ -1,3 +1,11 @@
+## [1.13.6](https://github.com/ClementBobin/hydenix/compare/v1.13.5...v1.13.6) (2026-09-04)
+
+
+### Bug Fixes
+
+* refactor inputs handling in hydenixConfig and vmConfig ([34239ec](https://github.com/ClementBobin/hydenix/commit/34239ec8b728cd81c6c73495f0aef71429f487fd))
+* update HYPRLAND_CONFIG path to use configHome instead of dataHome ([e652f74](https://github.com/ClementBobin/hydenix/commit/e652f741920f3e9afe05666afea04ce2af4a3a20))
+
 ## [1.13.5](https://github.com/ClementBobin/hydenix/compare/v1.13.4...v1.13.5) (2026-09-03)
 
 
