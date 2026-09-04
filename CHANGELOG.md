@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/ClementBobin/hydenix/compare/v1.14.1...v1.14.2) (2026-09-04)
+
+
+### Bug Fixes
+
+* add openssl package to Hyprland configuration ([f767741](https://github.com/ClementBobin/hydenix/commit/f76774162cdb3430327f589e78dfc1113d07e0b5))
+
 ## [1.14.1](https://github.com/ClementBobin/hydenix/compare/v1.14.0...v1.14.1) (2026-09-04)
 
 
