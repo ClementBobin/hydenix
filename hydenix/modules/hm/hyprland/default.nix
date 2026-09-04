@@ -25,6 +25,7 @@ in
       pkgs.hyprcursor
       pkgs.lua5_5
       pkgs.lua55Packages.luarocks
+      pkgs.openssl.dev
     ];
 
     home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
