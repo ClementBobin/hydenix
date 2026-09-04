@@ -23,8 +23,8 @@ in
       pkgs.hyprutils
       pkgs.hyprpicker
       pkgs.hyprcursor
-      pkgs.lua
-      pkgs.luarocks
+      pkgs.lua5_5
+      pkgs.lua55Packages.luarocks
     ];
 
     home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
