@@ -50,6 +50,12 @@ in
     '';
 
     home.file = {
+      ".local/state/hyde" = {
+        source = "${pkgs.hyde}/Configs/.local/state/hyde";
+        recursive = true;
+        force = true;
+        mutable = true;
+      };
       # Regular files (processed first)
       ".config/hyde/wallbash" = {
         source = "${pkgs.hyde}/Configs/.config/hyde/wallbash";
