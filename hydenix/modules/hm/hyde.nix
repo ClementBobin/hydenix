@@ -35,6 +35,11 @@ in
       HYPRLAND_CONFIG = "${config.xdg.configHome}/hypr/hyprland.lua";
     };
 
+    home.sessionPath = [
+      "${config.home.homeDirectory}/.local/lib/hyde"
+      "${config.home.homeDirectory}/.local/bin"
+    ];
+
     fonts.fontconfig.enable = true;
 
     # fixes cava from not initializing on boot
