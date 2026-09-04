@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/ClementBobin/hydenix/compare/v1.14.2...v1.14.3) (2026-09-04)
+
+
+### Bug Fixes
+
+* update HYPRLAND_CONFIG path to reference hyde.lua ([ccdb0f5](https://github.com/ClementBobin/hydenix/commit/ccdb0f5bd3e25a0492b9f878fca92abed858a1dc))
+
 ## [1.14.2](https://github.com/ClementBobin/hydenix/compare/v1.14.1...v1.14.2) (2026-09-04)
 
 
