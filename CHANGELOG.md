@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/ClementBobin/hydenix/compare/v1.13.6...v1.14.0) (2026-09-04)
+
+
+### Bug Fixes
+
+* merge ([191fced](https://github.com/ClementBobin/hydenix/commit/191fcede847103f7fcf9e29c396c74e8f6593cfb))
+
+
+### Features
+
+* add hyde state directory and include luarocks in hyprland packages ([ac338ff](https://github.com/ClementBobin/hydenix/commit/ac338ff2cbaf092a4e1ba785af5a5e2a3098930e))
+
 ## [1.13.6](https://github.com/ClementBobin/hydenix/compare/v1.13.5...v1.13.6) (2026-09-04)
 
 
