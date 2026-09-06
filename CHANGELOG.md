@@ -1,3 +1,10 @@
+## [1.14.4](https://github.com/ClementBobin/hydenix/compare/v1.14.3...v1.14.4) (2026-09-06)
+
+
+### Bug Fixes
+
+* update HYPRLAND_CONFIG path to use dataHome directory ([14b480f](https://github.com/ClementBobin/hydenix/commit/14b480feac8c68a64eeca360d35ccf93788e75fd))
+
 ## [1.14.3](https://github.com/ClementBobin/hydenix/compare/v1.14.2...v1.14.3) (2026-09-04)
 
 
