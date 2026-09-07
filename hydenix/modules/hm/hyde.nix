@@ -36,8 +36,8 @@ in
     };
 
     home.sessionPath = [
-      "${config.xdg.dataHome}/lib/hyde"
-      "${config.xdg.dataHome}/bin"
+      "${config.home.homeDirectory}/.local/lib/hyde"
+      "${config.home.homeDirectory}/.local/bin"
     ];
 
     fonts.fontconfig.enable = true;
