@@ -32,7 +32,7 @@ in
 
     # ensures hyprland config is available in session as per hyde uwsm update
     home.sessionVariables = {
-      HYPRLAND_CONFIG = "${config.xdg.dataHome}/share/hypr/hyde.lua";
+      HYPRLAND_CONFIG = "${config.xdg.dataHome}/hypr/hyde.lua";
     };
 
     home.sessionPath = [
