@@ -28,6 +28,7 @@ in
       python-pyamdgpuinfo
       hyq
       hydectl
+      hyde-config
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update

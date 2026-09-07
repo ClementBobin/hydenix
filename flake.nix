@@ -40,11 +40,10 @@
     #   url = "github:richen604/hyde-ipc";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # }
-    # # TODO: don't know if still needed, but keeping for now
-    # hyde-config = {
-    #   url = "github:richen604/hyde-config";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    hyde-config = {
+      url = "github:ClementBobin/hyde-config";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     { ... }@inputs:
@@ -92,14 +91,14 @@
         # Add hyq, hydectl, hyde-ipc, and hyde-config for building
         hyq = inputs.hyq.packages.${system}.default;
         hydectl = inputs.hydectl.packages.${system}.default;
-        #hyde-config = inputs.hyde-config.packages.${system}.default;
+        hyde-config = inputs.hyde-config.packages.${system}.default;
         # hyde-ipc = inputs.hyde-ipc.packages.${system}.default;
       };
 
       checks.${system} = {
         hyq = inputs.self.packages.${system}.hyq;
         hydectl = inputs.self.packages.${system}.hydectl;
-        #hyde-config = inputs.self.packages.${system}.hyde-config;
+        hyde-config = inputs.self.packages.${system}.hyde-config;
         #FIXME: hyde-ipc has 2gb of build dependencies, so disable for now to prevent gh actions timeouts
         # hyde-ipc = inputs.self.packages.${system}.hyde-ipc;
       };

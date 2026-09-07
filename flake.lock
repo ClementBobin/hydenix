@@ -38,6 +38,26 @@
         "type": "github"
       }
     },
+    "hyde-config": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1754889600,
+        "narHash": "sha256-kn35QcO7OxZxcYyaZNxQ4tBsLdeSi1u2kbWdPg/pky0=",
+        "owner": "richen604",
+        "repo": "hyde-config",
+        "rev": "59dc0659e0cfb72552616553f5b2635cf40c2184",
+        "type": "github"
+      },
+      "original": {
+        "owner": "richen604",
+        "repo": "hyde-config",
+        "type": "github"
+      }
+    },
     "hydectl": {
       "inputs": {
         "nixpkgs": [
@@ -163,6 +183,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyde": "hyde",
+        "hyde-config": "hyde-config",
         "hydectl": "hydectl",
         "hyq": "hyq",
         "nix-index-database": "nix-index-database",
