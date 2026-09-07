@@ -45,15 +45,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1754889600,
-        "narHash": "sha256-kn35QcO7OxZxcYyaZNxQ4tBsLdeSi1u2kbWdPg/pky0=",
-        "owner": "richen604",
+        "lastModified": 1788777313,
+        "narHash": "sha256-3lWqQALaQYoGMqIU3Vk4vJJFFFdHij2+QPaCZ1cu7NY=",
+        "owner": "ClementBobin",
         "repo": "hyde-config",
-        "rev": "59dc0659e0cfb72552616553f5b2635cf40c2184",
+        "rev": "bd4639f517c9ea58b2ca65d2c860ed17a7ef8379",
         "type": "github"
       },
       "original": {
-        "owner": "richen604",
+        "owner": "ClementBobin",
         "repo": "hyde-config",
         "type": "github"
       }
