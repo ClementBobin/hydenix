@@ -8,11 +8,11 @@ in
     ./audio.nix
     ./boot.nix
     ./hardware.nix
+    ./hyprland.nix
     ./network.nix
     ./nix.nix
     ./sddm.nix
     ./system.nix
-    ./gaming.nix
   ];
 
   options.hydenix = {
@@ -61,6 +61,6 @@ in
     i18n.defaultLocale = lib.mkIf cfg.enable cfg.locale;
     networking.hostName = lib.mkIf cfg.enable cfg.hostname;
 
-    system.stateVersion = "26.05";
+    system.stateVersion = lib.mkDefault "26.05";
   };
 }

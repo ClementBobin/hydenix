@@ -4,26 +4,22 @@
 }:
 {
   imports = [
-    ./mutable.nix
+    ./hyprland
+    ./awww.nix
     ./comma.nix
     ./display-management.nix
     ./dolphin.nix
     ./editors.nix
     ./fastfetch.nix
-    ./browser.nix
     ./gtk.nix
-    ./git.nix
     ./hyde.nix
-    ./hyprland
     ./lockscreen.nix
+    ./mutable.nix
     ./notifications.nix
     ./qt.nix
     ./rofi.nix
     ./screenshots.nix
     ./shell.nix
-    ./social.nix
-    ./spotify.nix
-    ./awww.nix
     ./terminals.nix
     ./theme.nix
     ./uwsm.nix
