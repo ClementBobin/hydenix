@@ -47,11 +47,13 @@ in
       ".local/share/hypr/" = {
         source = "${pkgs.hyde}/Configs/.local/share/hypr/";
         recursive = true;
+        mutable = true;
         force = true;
       };
       ".config/hypr/" = {
         source = "${pkgs.hyde}/Configs/.config/hypr/";
         recursive = true;
+        mutable = true;
         force = true;
       };
       ".config/hypr/hyprland.lua" = {
