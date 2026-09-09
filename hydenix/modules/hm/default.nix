@@ -6,11 +6,13 @@
   imports = [
     ./hyprland
     ./awww.nix
+    ./browser.nix
     ./comma.nix
     ./display-management.nix
     ./dolphin.nix
     ./editors.nix
     ./fastfetch.nix
+    ./git.nix
     ./gtk.nix
     ./hyde.nix
     ./lockscreen.nix
@@ -20,6 +22,8 @@
     ./rofi.nix
     ./screenshots.nix
     ./shell.nix
+    ./social.nix
+    ./spotify.nix
     ./terminals.nix
     ./theme.nix
     ./uwsm.nix
