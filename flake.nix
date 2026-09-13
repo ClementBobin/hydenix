@@ -3,7 +3,7 @@
 
   inputs = {
     # Hydenix's nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/release-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs/3497aa5c9457a9d88d71fa93a4a8368816fbeeba";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
