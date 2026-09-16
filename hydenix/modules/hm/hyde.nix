@@ -29,6 +29,7 @@ in
       hyq
       hydectl
       hyde-config
+      app2unit
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
