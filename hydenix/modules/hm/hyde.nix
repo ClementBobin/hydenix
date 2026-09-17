@@ -32,6 +32,7 @@ in
       app2unit
       openssl
       pkg-config
+      hyprsunset
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
@@ -88,12 +89,25 @@ in
         mutable = true;
       };
 
+      # Create a custom luarocks wrapper that injects OpenSSL paths automatically
+      ".local/bin/luarocks" = {
+        source = pkgs.writeShellScript "luarocks-wrapper" ''
+          # Automatically append OpenSSL paths for any luarocks install command
+          args=("$@")
+          for arg in "$@"; do
+            if [ "$arg" = "install" ]; then
+              exec /etc/profiles/per-user/mirage/bin/luarocks "${"\$@\}"} OPENSSL_DIR="${pkgs.openssl.dev}" OPENSSL_INCDIR="${pkgs.openssl.dev}/include" OPENSSL_LIBDIR="${pkgs.openssl.out}/lib"
+            fi
+          done
+          exec /etc/profiles/per-user/mirage/bin/luarocks "${"\$@\}"}
+        '';
+        executable = true;
+      };
+
       ".local/bin/hyde-shell" = {
-source = pkgs.writeShellScript "hyde-shell" ''
+        source = pkgs.writeShellScript "hyde-shell" ''
           export PYTHONPATH="${pkgs.python-pyamdgpuinfo}/${pkgs.python3.sitePackages}:$PYTHONPATH"
-          export OPENSSL_DIR="${pkgs.openssl.dev}"
-          export OPENSSL_LIBDIR="${pkgs.openssl.out}/lib"
-          export PKG_CONFIG_PATH="${pkgs.openssl.out}/lib/pkgconfig:$PKG_CONFIG_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
           exec ${pkgs.bashInteractive}/bin/bash "${pkgs.hyde}/Configs/.local/bin/hyde-shell" "$@"
         '';
         executable = true;
