@@ -30,6 +30,8 @@ in
       hydectl
       hyde-config
       app2unit
+      openssl
+      pkg-config
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
