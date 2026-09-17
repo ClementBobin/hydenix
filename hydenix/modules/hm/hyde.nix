@@ -89,8 +89,11 @@ in
       };
 
       ".local/bin/hyde-shell" = {
-        source = pkgs.writeShellScript "hyde-shell" ''
+source = pkgs.writeShellScript "hyde-shell" ''
           export PYTHONPATH="${pkgs.python-pyamdgpuinfo}/${pkgs.python3.sitePackages}:$PYTHONPATH"
+          export OPENSSL_DIR="${pkgs.openssl.dev}"
+          export OPENSSL_LIBDIR="${pkgs.openssl.out}/lib"
+          export PKG_CONFIG_PATH="${pkgs.openssl.out}/lib/pkgconfig:$PKG_CONFIG_PATH"
           exec ${pkgs.bashInteractive}/bin/bash "${pkgs.hyde}/Configs/.local/bin/hyde-shell" "$@"
         '';
         executable = true;
