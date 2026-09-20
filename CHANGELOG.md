@@ -1,3 +1,11 @@
+# [1.16.0](https://github.com/ClementBobin/hydenix/compare/v1.15.0...v1.16.0) (2026-09-20)
+
+
+### Features
+
+* add nixpkgs-unstable to flake.lock with updated metadata ([af07465](https://github.com/ClementBobin/hydenix/commit/af0746552f496ecbf33773b344c4915757c3f382))
+* add zen-browser support and theme management scripts ([13890f6](https://github.com/ClementBobin/hydenix/commit/13890f6cf27873fbffb7ae375f50d6aa921f6f62))
+
 # [1.15.0](https://github.com/ClementBobin/hydenix/compare/v1.14.4...v1.15.0) (2026-09-20)
 
 
