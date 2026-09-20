@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/ClementBobin/hydenix/compare/v1.16.0...v1.17.0) (2026-09-20)
+
+
+### Features
+
+* modify hyde and rofi; add tesseract and zbar support ([550f217](https://github.com/ClementBobin/hydenix/commit/550f217c2228753a5ac6485693676d0e3d6e4693))
+
 # [1.16.0](https://github.com/ClementBobin/hydenix/compare/v1.15.0...v1.16.0) (2026-09-20)
 
 
