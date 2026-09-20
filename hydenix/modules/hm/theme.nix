@@ -73,57 +73,6 @@ in
         }) themesList
       );
 
-    /*
-      We require both an activation script and a service to set the theme.
-      theme.set.sh uses dconf partially to set vars, which requires graphical targets to run
-      This is only an issue for the *first* rebuild, as dbus has never been started
-
-      #TODO: this works but a more robust implementation is possible. just do what theme.set.sh/dconf.set.sh does and use home.file to set the correct gtk/qt/etc options
-    */
-
-    # applies what it can before graphical.target, think of this like a "first content paint"
-    home.activation.setTheme = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
-      # Define path with required tools
-      export PATH="${
-        lib.makeBinPath (
-          with pkgs;
-          [
-            awww
-            killall
-            hyprland
-            dunst
-            libnotify
-            systemd
-            waybar
-            kitty
-            gawk
-            coreutils
-            parallel
-            imagemagick
-            which
-            util-linux
-            dconf
-          ]
-        )
-      }:$HOME/.local/bin:$PATH"
-
-      # Set up logging
-      LOG_FILE="$HOME/.local/state/hyde/theme-switch.log"
-      mkdir -p $HOME/.local/state/hyde
-      # Clear the log file before writing
-      : > "$LOG_FILE"
-      chmod 644 $LOG_FILE
-
-      echo "Setting theme to ${cfg.active}..." | tee -a "$LOG_FILE"
-
-      export LOG_LEVEL=debug
-
-      # Run the theme switch commands with the custom runtime dir
-      $HOME/.local/lib/hyde/theme.switch.sh -s "${cfg.active}" >> "$LOG_FILE" 2>&1
-
-      echo "Theme switch completed. Log saved to $LOG_FILE" | tee -a "$LOG_FILE"
-    '';
-
     # sets dconf settings correctly
     systemd.user.services.setThemeDconf = {
       Unit = {
@@ -165,12 +114,17 @@ in
     systemd.user.services.setTheme = {
       Unit = {
         Description = "Apply Hyde theme settings (full theme switch)";
+
+        Requires = [ "setThemeDconf.service" ];
+
         After = [
           "graphical-session.target"
           "dbus.service"
           "setThemeDconf.service"
         ];
+
         Wants = [ "dbus.service" ];
+
         PartOf = [ "graphical-session.target" ];
       };
       Service = {

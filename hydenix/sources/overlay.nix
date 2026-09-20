@@ -13,12 +13,14 @@ let
     pokego = callPackage ./pokego.nix { };
     python-pyamdgpuinfo = callPackage ./python-pyamdgpuinfo.nix { };
     Tela-circle-dracula = callPackage ./Tela-circle-dracula.nix { };
-    #Bibata-Modern-Ice = callPackage ./Bibata-Modern-Ice.nix { };
+    wallbash = callPackage ./wallbash.nix { };
+    Bibata-Modern-Ice = callPackage ./Bibata-Modern-Ice.nix { };
     hyde = callPackage ./hyde.nix { inherit inputs; };
     hydenix-sddm-theme = callPackage ./sddm/default.nix { };
     hydenix-themes = callPackage ./themes/default.nix { };
     hyq = inputs.hyq.packages.${prev.stdenv.hostPlatform.system}.default;
     hydectl = inputs.hydectl.packages.${prev.stdenv.hostPlatform.system}.default;
+    hyde-config = inputs.hyde-config.packages.${prev.stdenv.hostPlatform.system}.default;
   };
 in
 packages

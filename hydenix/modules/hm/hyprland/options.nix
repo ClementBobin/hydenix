@@ -76,23 +76,5 @@ in
         description = "Complete hypridle configuration override";
       };
     };
-
-    # Keybindings configurations
-    keybindings = {
-      overrideConfig = lib.mkOption {
-        type = lib.types.nullOr lib.types.lines;
-        default = null;
-        description = "Complete keybindings configuration override";
-      };
-    };
-
-    # Window rules configurations
-    windowrules = {
-      overrideConfig = lib.mkOption {
-        type = lib.types.nullOr lib.types.lines;
-        default = null;
-        description = "Complete window rules configuration override";
-      };
-    };
   };
 }

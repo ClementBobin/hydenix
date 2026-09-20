@@ -7,6 +7,7 @@
 
 let
   cfg = config.hydenix.hm.hyprland;
+  cfgHydenix = config.hydenix.hm;
 in
 {
   imports = [
@@ -19,13 +20,10 @@ in
 
   config = lib.mkIf cfg.enable {
     # Always include packages and base setup
-    home.packages = [
+    home.packages = with pkgs; [
       pkgs.hyprutils
       pkgs.hyprpicker
       pkgs.hyprcursor
-      pkgs.lua5_5
-      pkgs.lua55Packages.luarocks
-      pkgs.openssl.dev
     ];
 
     home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
@@ -47,11 +45,13 @@ in
       ".local/share/hypr/" = {
         source = "${pkgs.hyde}/Configs/.local/share/hypr/";
         recursive = true;
+        mutable = true;
         force = true;
       };
       ".config/hypr/" = {
         source = "${pkgs.hyde}/Configs/.config/hypr/";
         recursive = true;
+        mutable = true;
         force = true;
       };
       ".config/hypr/hyprland.lua" = {

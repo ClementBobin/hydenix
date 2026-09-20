@@ -23,16 +23,27 @@ in
     home.packages = with pkgs; [
       hyde
       Tela-circle-dracula
+      Bibata-Modern-Ice
+      wallbash
       kdePackages.kconfig # TODO: not sure if this is still needed
       wf-recorder # screen recorder for wlroots-based compositors such as sway
       python-pyamdgpuinfo
       hyq
       hydectl
+      hyde-config
+      app2unit
+      openssl
+      pkg-config
+      hyprsunset
+      pyprland
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
     home.sessionVariables = {
-      HYPRLAND_CONFIG = "${config.xdg.dataHome}/share/hypr/hyde.lua";
+      HYPRLAND_CONFIG = "${config.xdg.dataHome}/hypr/hyde.lua";
+      LIB_DIR = "${config.home.homeDirectory}/.local/lib";
     };
 
     home.sessionPath = [
@@ -50,11 +61,42 @@ in
     '';
 
     home.file = {
-      ".local/state/hyde" = {
-        source = "${pkgs.hyde}/Configs/.local/state/hyde";
-        recursive = true;
-        force = true;
-        mutable = true;
+    ".config/systemd/user/hyde-config.service" = {
+        text = ''
+          [Unit]
+          Description=HyDE Configuration Parser Service
+          Documentation=https://github.com/HyDE-Project/hyde-config
+          After=graphical-session.target
+          PartOf=graphical-session.target
+
+          [Service]
+          Type=simple
+          ExecStart=%h/.local/lib/hyde/hyde-config
+          Restart=on-failure
+          RestartSec=5s
+          Environment="DISPLAY=:0"
+
+          # Make sure the required directories exist
+          ExecStartPre=/usr/bin/env mkdir -p %h/.config/hyde
+          ExecStartPre=/usr/bin/env mkdir -p %h/.local/state/hyde
+
+          [Install]
+          WantedBy=graphical-session.target
+        '';
+      };
+      ".config/systemd/user/hyde-ipc.service" = {
+        source = "${pkgs.hyde}/Configs/.config/systemd/user/hyde-ipc.service";
+      };
+      ".local/bin/hyde-shell" = {
+        source = pkgs.writeShellScript "hyde-shell" ''
+          export PYTHONPATH="${pkgs.python-pyamdgpuinfo}/${pkgs.python3.sitePackages}:$PYTHONPATH"
+          if [[ "$BASH_SOURCE" == "$0" ]]; then
+            exec ${pkgs.bashInteractive}/bin/bash "${pkgs.hyde}/Configs/.local/bin/hyde-shell" "$@"
+          else
+            source "${pkgs.hyde}/Configs/.local/bin/hyde-shell"
+          fi
+        '';
+        executable = true;
       };
       # Regular files (processed first)
       ".config/hyde/wallbash" = {
@@ -62,14 +104,6 @@ in
         recursive = true;
         force = true;
         mutable = true;
-      };
-
-      ".local/bin/hyde-shell" = {
-        source = pkgs.writeShellScript "hyde-shell" ''
-          export PYTHONPATH="${pkgs.python-pyamdgpuinfo}/${pkgs.python3.sitePackages}:$PYTHONPATH"
-          exec ${pkgs.bashInteractive}/bin/bash "${pkgs.hyde}/Configs/.local/bin/hyde-shell" "$@"
-        '';
-        executable = true;
       };
 
       ".local/lib/hyde" = {
@@ -141,6 +175,12 @@ in
 
       ".config/electron-flags.conf" = {
         source = "${pkgs.hyde}/Configs/.config/electron-flags.conf";
+      };
+
+      ".config/pypr/config.toml" = {
+        source = "${pkgs.hyde}/Configs/.config/pypr/config.toml";
+        force = true;
+        mutable = true;
       };
 
       ".local/share/icons/Wallbash-Icon" = {
