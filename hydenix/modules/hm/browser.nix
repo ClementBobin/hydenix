@@ -9,7 +9,6 @@ let
     firefox  = [ firefox ];
     brave    = [ brave ];
     zen      = [ (inputs.zen-browser.packages.${pkgs.system}.default) ];
-    tor      = [ tor-browser ];
   };
 
   # Get packages for enabled browsers

@@ -30,6 +30,7 @@
     ./waybar.nix
     ./wlogout.nix
     ./xdg.nix
+    ./lua.nix
   ];
 
   options.hydenix.hm = {

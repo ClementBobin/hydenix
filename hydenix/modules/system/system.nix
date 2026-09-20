@@ -26,7 +26,6 @@ in
       resvg # SVG rendering library and tools
       envsubst # Environment variable substitution utility
       killall # Process termination utility
-      git # distributed version control system
       fzf # command line fuzzy finder
       upower # power management/battery status daemon
       kdePackages.ark # kde file archiver

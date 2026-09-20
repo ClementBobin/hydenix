@@ -23,6 +23,8 @@ in
     home.packages = with pkgs; [
       hyde
       Tela-circle-dracula
+      Bibata-Modern-Ice
+      wallbash
       kdePackages.kconfig # TODO: not sure if this is still needed
       wf-recorder # screen recorder for wlroots-based compositors such as sway
       python-pyamdgpuinfo
@@ -33,11 +35,15 @@ in
       openssl
       pkg-config
       hyprsunset
+      pyprland
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
     home.sessionVariables = {
       HYPRLAND_CONFIG = "${config.xdg.dataHome}/hypr/hyde.lua";
+      LIB_DIR = "${config.home.homeDirectory}/.local/lib";
     };
 
     home.sessionPath = [
@@ -81,36 +87,23 @@ in
       ".config/systemd/user/hyde-ipc.service" = {
         source = "${pkgs.hyde}/Configs/.config/systemd/user/hyde-ipc.service";
       };
+      ".local/bin/hyde-shell" = {
+        source = pkgs.writeShellScript "hyde-shell" ''
+          export PYTHONPATH="${pkgs.python-pyamdgpuinfo}/${pkgs.python3.sitePackages}:$PYTHONPATH"
+          if [[ "$BASH_SOURCE" == "$0" ]]; then
+            exec ${pkgs.bashInteractive}/bin/bash "${pkgs.hyde}/Configs/.local/bin/hyde-shell" "$@"
+          else
+            source "${pkgs.hyde}/Configs/.local/bin/hyde-shell"
+          fi
+        '';
+        executable = true;
+      };
       # Regular files (processed first)
       ".config/hyde/wallbash" = {
         source = "${pkgs.hyde}/Configs/.config/hyde/wallbash";
         recursive = true;
         force = true;
         mutable = true;
-      };
-
-      # Create a custom luarocks wrapper that injects OpenSSL paths automatically
-      ".local/bin/luarocks" = {
-        source = pkgs.writeShellScript "luarocks-wrapper" ''
-          # Automatically append OpenSSL paths for any luarocks install command
-          args=("$@")
-          for arg in "$@"; do
-            if [ "$arg" = "install" ]; then
-              exec /etc/profiles/per-user/mirage/bin/luarocks "${"\$@\}"} OPENSSL_DIR="${pkgs.openssl.dev}" OPENSSL_INCDIR="${pkgs.openssl.dev}/include" OPENSSL_LIBDIR="${pkgs.openssl.out}/lib"
-            fi
-          done
-          exec /etc/profiles/per-user/mirage/bin/luarocks "${"\$@\}"}
-        '';
-        executable = true;
-      };
-
-      ".local/bin/hyde-shell" = {
-        source = pkgs.writeShellScript "hyde-shell" ''
-          export PYTHONPATH="${pkgs.python-pyamdgpuinfo}/${pkgs.python3.sitePackages}:$PYTHONPATH"
-          export PATH="$HOME/.local/bin:$PATH"
-          exec ${pkgs.bashInteractive}/bin/bash "${pkgs.hyde}/Configs/.local/bin/hyde-shell" "$@"
-        '';
-        executable = true;
       };
 
       ".local/lib/hyde" = {
@@ -182,6 +175,12 @@ in
 
       ".config/electron-flags.conf" = {
         source = "${pkgs.hyde}/Configs/.config/electron-flags.conf";
+      };
+
+      ".config/pypr/config.toml" = {
+        source = "${pkgs.hyde}/Configs/.config/pypr/config.toml";
+        force = true;
+        mutable = true;
       };
 
       ".local/share/icons/Wallbash-Icon" = {

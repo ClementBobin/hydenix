@@ -33,6 +33,9 @@ pkgs.stdenv.mkDerivation {
     find . -type f -executable -print0 | xargs -0 sed -i 's/find "/find -L "/g'
     find . -type f -name "*.sh" -print0 | xargs -0 sed -i 's/find "/find -L "/g'
 
+    # Fix grimblast references to use global PATH instead of missing internal lib path
+    find . -type f -print0 | xargs -0 sed -i 's|\$LIB_DIR/hyde/screenshot/grimblast|grimblast|g'
+
     # remove lines 128-130 from Configs/.local/lib/hyde/theme.switch.sh
     # if [ -d /run/current-system/sw/share/themes ]; then
     #     export themesDir=/run/current-system/sw/share/themes

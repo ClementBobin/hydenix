@@ -53,6 +53,7 @@ in
       withUWSM = true;
     };
 
+    services.displayManager.defaultSession = "hyprland-uwsm";
     services.dbus.enable = true;
     programs.dconf.enable = true;
     programs.gnupg.agent = {
@@ -63,6 +64,7 @@ in
     # For polkit authentication
     security.polkit.enable = true;
     security.pam.services.swaylock = { };
+    security.pam.services.hyprlock = { };
     security.rtkit.enable = true;
     systemd.user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
@@ -77,12 +79,16 @@ in
         TimeoutStopSec = 10;
       };
     };
-    
+
+
     # For proper XDG desktop integration
     xdg.portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
     };
+
 
   };
 }
