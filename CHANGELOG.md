@@ -1,3 +1,28 @@
+# [1.15.0](https://github.com/ClementBobin/hydenix/compare/v1.14.4...v1.15.0) (2026-09-20)
+
+
+### Bug Fixes
+
+* add hyde-config input to flake and include in home-manager packages ([a7b7135](https://github.com/ClementBobin/hydenix/commit/a7b71354b2b51725d41871364f1b4238c5390643))
+* add systemd service for hyde-config and ensure required directories are created ([e9f2dc1](https://github.com/ClementBobin/hydenix/commit/e9f2dc10d029d0f18f0423d02931afb20313ea0b))
+* correct HYPRLAND_CONFIG path to use hypr directory ([d33ec15](https://github.com/ClementBobin/hydenix/commit/d33ec15a682ec328097842b526d3a489e5d832c1))
+* ensure mutable flag is set for hyprland configuration directories ([9fdde1d](https://github.com/ClementBobin/hydenix/commit/9fdde1d7da62bc742fbdce5b2bf9e2186bbfb6bd))
+* remove redundant assertions for keybindings and windowrules in hyprland configuration ([94eadf4](https://github.com/ClementBobin/hydenix/commit/94eadf4cd41d3f437ece566166b78330fdcdd562))
+* update flake.lock for hyde-config and include in overlay.nix packages ([7521706](https://github.com/ClementBobin/hydenix/commit/7521706f235585651cf81355933d62995b32506e))
+* update home.sessionPath to use correct user directories ([d36d1cd](https://github.com/ClementBobin/hydenix/commit/d36d1cd3ab1ecaf4856fe9a5aa31ea1133129728))
+* update hydenix URL to point to the correct repository ([47058f9](https://github.com/ClementBobin/hydenix/commit/47058f9ddffa0b23c1f0d9c354538a87a958ee6f))
+* update sessionPath to use xdg.dataHome instead of home.homeDirectory ([a2d296c](https://github.com/ClementBobin/hydenix/commit/a2d296c0feeb4026a4eebe1f4028a4880da0e9e7))
+
+
+### Features
+
+* add app2unit to hyde module package list ([6252a6e](https://github.com/ClementBobin/hydenix/commit/6252a6e7f7393d94dc823ef3af9f155be916c46d))
+* add browser, git, social, and spotify modules with configuration options ([6004d87](https://github.com/ClementBobin/hydenix/commit/6004d87054171daaa6c9d758c1548145c0a6a3c0))
+* add hyprsunset to package list and create luarocks wrapper for OpenSSL paths ([6c1b010](https://github.com/ClementBobin/hydenix/commit/6c1b010ac37984fcc9d64e65c9c6c89e799b4505))
+* add openssl and pkg-config to hyde module package list ([364775b](https://github.com/ClementBobin/hydenix/commit/364775be997318e7e0bc2f0719accba5f8cbaca8))
+* add OpenSSL environment variables to hyde-shell script ([0499b17](https://github.com/ClementBobin/hydenix/commit/0499b1798fabff209da29b43296ac41b0c21f58d))
+* update flake.lock and flake.nix for new package versions; add lua module and related configurations ([15a1d41](https://github.com/ClementBobin/hydenix/commit/15a1d41ee6e6a9d726717124b86f0c763022e1d1))
+
 ## [1.14.4](https://github.com/ClementBobin/hydenix/compare/v1.14.3...v1.14.4) (2026-09-06)
 
 
