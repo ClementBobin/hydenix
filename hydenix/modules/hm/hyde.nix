@@ -39,7 +39,8 @@ in
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       setxkbmap
-      tesseract
+      tesseract # ocr scanner
+      zbar # qr code scanner for hyq
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update
@@ -81,6 +82,7 @@ in
           # Make sure the required directories exist
           ExecStartPre=/usr/bin/env mkdir -p %h/.config/hyde
           ExecStartPre=/usr/bin/env mkdir -p %h/.local/state/hyde
+          ExecStartPre=/usr/bin/env touch %h/.local/state/hyde/config
 
           [Install]
           WantedBy=graphical-session.target
