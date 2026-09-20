@@ -38,6 +38,8 @@ in
       pyprland
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
+      setxkbmap
+      tesseract
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update

@@ -5,6 +5,7 @@
 {
   imports = [
     ./hyprland
+    ./theme
     ./awww.nix
     ./browser.nix
     ./comma.nix
@@ -25,7 +26,6 @@
     ./social.nix
     ./spotify.nix
     ./terminals.nix
-    ./theme.nix
     ./uwsm.nix
     ./waybar.nix
     ./wlogout.nix

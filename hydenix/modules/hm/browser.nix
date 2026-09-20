@@ -3,12 +3,15 @@
 let
   cfg = config.hydenix.hm.browser;
 
-  # Map browsers to their packages (using pkgs.)
+  # Handles both local build and template flake inputs path for zen-browser
+  zenInput = if inputs ? zen-browser then inputs.zen-browser else inputs.hydenix.inputs.zen-browser;
+
+  # Map browsers to their packages (using pkgs or zenInput packages)
   browserToPackage = with pkgs; {
     chrome   = [ google-chrome ];
     firefox  = [ firefox ];
     brave    = [ brave ];
-    zen      = [ (inputs.zen-browser.packages.${pkgs.system}.default) ];
+    zen      = [ zenInput.packages.${pkgs.stdenv.system}.default ]; # Pulls zen from zen-browser input
   };
 
   # Get packages for enabled browsers

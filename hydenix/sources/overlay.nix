@@ -21,6 +21,7 @@ let
     hyq = inputs.hyq.packages.${prev.stdenv.hostPlatform.system}.default;
     hydectl = inputs.hydectl.packages.${prev.stdenv.hostPlatform.system}.default;
     hyde-config = inputs.hyde-config.packages.${prev.stdenv.hostPlatform.system}.default;
+    zen-browser = inputs.zen-browser.packages.${prev.stdenv.hostPlatform.system}.default;
   };
 in
 packages

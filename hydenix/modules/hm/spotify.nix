@@ -3,7 +3,10 @@
 let
   cfg = config.hydenix.hm.spotify;
 
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+  # Handles both local build and template flake inputs path
+  spicetifyInput = if inputs ? spicetify-nix then inputs.spicetify-nix else inputs.hydenix.inputs.spicetify-nix;
+
+  spicePkgs = spicetifyInput.legacyPackages.${pkgs.stdenv.system};
 
   # Map document clients to their packages
   clientsToPackage = with pkgs; {
@@ -17,7 +20,7 @@ let
 in
 {
   imports = [
-    inputs.spicetify-nix.homeManagerModules.spicetify
+    spicetifyInput.homeManagerModules.spicetify
   ];
 
   options.hydenix.hm.spotify = {
@@ -73,7 +76,7 @@ in
         };
     };
 
-    # Configure mpv media player if it's in the clients list
+    # Configure spicetify if it's in the clients list
     programs = {
       spicetify = lib.mkIf (lib.elem "spicetify" cfg.clients) {
         enable = true;
