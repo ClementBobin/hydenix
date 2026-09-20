@@ -36,6 +36,9 @@ pkgs.stdenv.mkDerivation {
     # Fix grimblast references to use global PATH instead of missing internal lib path
     find . -type f -print0 | xargs -0 sed -i 's|\$LIB_DIR/hyde/screenshot/grimblast|grimblast|g'
 
+    sed -i '/tesseract_package_prefix=/,/^    done$/d' Configs/.local/lib/hyde/shutils/ocr.sh
+    sed -i '/echo \$tesseract_languages/d' Configs/.local/lib/hyde/shutils/ocr.sh
+
     # remove lines 128-130 from Configs/.local/lib/hyde/theme.switch.sh
     # if [ -d /run/current-system/sw/share/themes ]; then
     #     export themesDir=/run/current-system/sw/share/themes
