@@ -24,10 +24,8 @@ in
       hyde
       Tela-circle-dracula
       Bibata-Modern-Ice
-      wallbash
       kdePackages.kconfig # TODO: not sure if this is still needed
       wf-recorder # screen recorder for wlroots-based compositors such as sway
-      python-pyamdgpuinfo
       hyq
       hydectl
       hyde-config
@@ -35,12 +33,13 @@ in
       openssl
       pkg-config
       hyprsunset
-      pyprland
       nerd-fonts.jetbrains-mono
       nerd-fonts.symbols-only
       setxkbmap
       tesseract # ocr scanner
       zbar # qr code scanner for hyq
+      uv # uv is a dependency for python env
+      pulseaudio # pactl volume control for hyq
     ];
 
     # ensures hyprland config is available in session as per hyde uwsm update

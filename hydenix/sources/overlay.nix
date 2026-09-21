@@ -13,7 +13,6 @@ let
     pokego = callPackage ./pokego.nix { };
     python-pyamdgpuinfo = callPackage ./python-pyamdgpuinfo.nix { };
     Tela-circle-dracula = callPackage ./Tela-circle-dracula.nix { };
-    wallbash = callPackage ./wallbash.nix { };
     Bibata-Modern-Ice = callPackage ./Bibata-Modern-Ice.nix { };
     hyde = callPackage ./hyde.nix { inherit inputs; };
     hydenix-sddm-theme = callPackage ./sddm/default.nix { };
