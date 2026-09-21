@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/ClementBobin/hydenix/compare/v1.17.0...v1.18.0) (2026-09-21)
+
+
+### Features
+
+* remove wallbash and python-pyamdgpuinfo, add uv and pulseaudio ([8708819](https://github.com/ClementBobin/hydenix/commit/870881912bb0fbf5cb2e1e348dd12c7e3cd1cc41))
+
 # [1.17.0](https://github.com/ClementBobin/hydenix/compare/v1.16.0...v1.17.0) (2026-09-20)
 
 
