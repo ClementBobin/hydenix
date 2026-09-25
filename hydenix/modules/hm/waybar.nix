@@ -43,6 +43,7 @@ in
       lib.optionals cfg.waybar.enable [
         waybar # system bar
         playerctl # media player cli
+        pulseaudio # pactl volume control for hyq
         gobject-introspection # for python packages
         (python3.withPackages (ps: with ps; [ pygobject3 requests ])) # python with pygobject3
         python-pyamdgpuinfo # AMD GPU information library
