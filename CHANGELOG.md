@@ -1,3 +1,21 @@
+# [1.19.0](https://github.com/ClementBobin/hydenix/compare/v1.18.0...v1.19.0) (2026-09-25)
+
+
+### Bug Fixes
+
+* remove pulseaudio from hyde module and add it to waybar module ([630b2c2](https://github.com/ClementBobin/hydenix/commit/630b2c2085ad32b475c569f8c07b90ad688ca8f8))
+* update GitHub Discussions URL to reflect correct user ([cd409e1](https://github.com/ClementBobin/hydenix/commit/cd409e13a1c6199cad74532b5510cb4603d65f5f))
+* update GitHub repository URL in dev-shell.nix ([7ef4c2b](https://github.com/ClementBobin/hydenix/commit/7ef4c2b4bd0f51c22a214c93a495fef7a2e237f9))
+* update inputs handling in flake.nix and correct documentation URL ([adb23c0](https://github.com/ClementBobin/hydenix/commit/adb23c020c3bf6d3b1c574d5443c0698d641102e))
+* update repository links in README.md to reflect correct user ([ef5f8dd](https://github.com/ClementBobin/hydenix/commit/ef5f8dd341b1c015dc021194b400595249aea8a1))
+
+
+### Features
+
+* add documentation files for installation, options, troubleshooting ([2c5ac99](https://github.com/ClementBobin/hydenix/commit/2c5ac99327ca1180ae32c0eb56ae3165f1311fde))
+* remove TODO.md file and associated tasks ([63144e0](https://github.com/ClementBobin/hydenix/commit/63144e0ef3cc31460ece587f31836c8d7fd84b7b))
+* update flake.lock with new package versions and metadata ([fe7086c](https://github.com/ClementBobin/hydenix/commit/fe7086c04989ca86a825a916cba0b7cbc3d426e8))
+
 # [1.18.0](https://github.com/ClementBobin/hydenix/compare/v1.17.0...v1.18.0) (2026-09-21)
 
 
