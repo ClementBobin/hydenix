@@ -7,6 +7,9 @@ let
   pkgs = import inputs.nixpkgs {
     inherit system;
     config.allowUnfree = true;
+    config.permittedInsecurePackages = [
+      "electron-41.9.1"
+    ];
     overlays = [
       inputs.self.overlays.default
     ];

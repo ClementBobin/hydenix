@@ -16,18 +16,14 @@
       hydenixConfig = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inputs = inputs // {
-            spicetify-nix = inputs.hydenix.inputs.spicetify-nix;
-          };
+          inputs = inputs;
         };
         modules = [
           ./configuration.nix
         ];
       };
       vmConfig = inputs.hydenix.lib.vmConfig {
-        inputs = inputs // {
-          spicetify-nix = inputs.hydenix.inputs.spicetify-nix;
-        };
+        inputs = inputs;
         nixosConfiguration = hydenixConfig;
       };
     in
