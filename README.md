@@ -8,9 +8,9 @@
 <div align="center">
 
 [![NixOS Unstable](https://img.shields.io/badge/NixOS-unstable-ebbcba.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
-[![Release](https://img.shields.io/github/v/release/richen604/hydenix?style=flat-square&color=c79bf0)](https://github.com/richen604/hydenix/releases)
-[![Last Commit](https://img.shields.io/github/last-commit/richen604/hydenix/main?style=flat-square&color=ebbcba)](https://github.com/richen604/hydenix/commits/main)
-[![Nix Flake Check](https://img.shields.io/github/actions/workflow/status/richen604/hydenix/flake-check.yml?style=flat-square&color=c79bf0&label=flake%20check)](https://github.com/richen604/hydenix/actions/workflows/flake-check.yml)
+[![Release](https://img.shields.io/github/v/release/ClementBobin/hydenix?style=flat-square&color=c79bf0)](https://github.com/ClementBobin/hydenix/releases)
+[![Last Commit](https://img.shields.io/github/last-commit/ClementBobin/hydenix/main?style=flat-square&color=ebbcba)](https://github.com/ClementBobin/hydenix/commits/main)
+[![Nix Flake Check](https://img.shields.io/github/actions/workflow/status/ClementBobin/hydenix/flake-check.yml?style=flat-square&color=c79bf0&label=flake%20check)](https://github.com/ClementBobin/hydenix/actions/workflows/flake-check.yml)
 
 </div>
 
@@ -67,7 +67,7 @@ if you encounter issues running the vm, refer to the [virtio guide](./template/d
 
 ```bash
 # run the flake remotely
-nix run github:richen604/hydenix
+nix run github:ClementBobin/hydenix
 ```
 
 > [!NOTE]
