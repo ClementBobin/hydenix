@@ -83,8 +83,22 @@ reboot your machine, log in through SDDM, and you are running hydenix.
 > passwd
 > ```
 
-once logged in, regenerate the theme cache:
+once logged in:
+
+```bash
+hydenix init
+```
+
+---
+
+if you want to regenerate the theme cache:
 
 ```bash
 hyde-shell reload
+```
+
+if you need to regenerate the environement python and lua
+
+```bash
+hydenix env
 ```

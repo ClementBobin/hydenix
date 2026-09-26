@@ -52,6 +52,10 @@ in
       "${config.home.homeDirectory}/.local/bin"
     ];
 
+    home.shellAliases = {
+      hydenix = "hyde-shell reload && hyde-shell pyinit && hyde-shell luainit";
+    };
+
     fonts.fontconfig.enable = true;
 
     # fixes cava from not initializing on boot
@@ -88,6 +92,60 @@ in
       };
       ".config/systemd/user/hyde-ipc.service" = {
         source = "${pkgs.hyde}/Configs/.config/systemd/user/hyde-ipc.service";
+      };
+      ".local/bin/hydenix" = {
+        executable = true;
+        text = ''
+          #!/usr/bin/env bash
+          set -e
+
+          show_help() {
+              echo "Usage: hydenix [COMMAND]"
+              echo "Commands:"
+              echo "  init           Run Python/Lua initialization and hyde-shell reload"
+              echo "  env            Run Python and Lua initialization only"
+              echo "  -h, --help     Show this help message"
+          }
+
+          # Vérifie si aucun argument n'est fourni
+          if [ $# -eq 0 ]; then
+              show_help
+              exit 1
+          fi
+
+          COMMAND="$1"
+          shift
+
+          case "$COMMAND" in
+              init)
+                  echo "==> Running Python initialization..."
+                  hyde-shell pyinit
+
+                  echo "==> Running Lua initialization..."
+                  hyde-shell luainit
+
+                  echo "==> Running hyde-shell reload..."
+                  hyde-shell reload
+                  ;;
+              env)
+                  echo "==> Running Python initialization..."
+                  hyde-shell pyinit
+
+                  echo "==> Running Lua initialization..."
+                  hyde-shell luainit
+                  ;;
+              -h|--help)
+                  show_help
+                  ;;
+              *)
+                  echo "Unknown command: $COMMAND"
+                  show_help
+                  exit 1
+                  ;;
+          esac
+
+          echo "✨ Done!"
+        '';
       };
       ".local/bin/hyde-shell" = {
         source = pkgs.writeShellScript "hyde-shell" ''
