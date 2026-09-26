@@ -183,7 +183,7 @@ Installs and configures the SDDM display manager with Wayland support, HiDPI, an
 | Option | Type | Default | Description |
 |---|---|---|---|
 | `hydenix.sddm.enable` | `bool` | `true` | Enable the SDDM module. |
-| `hydenix.sddm.theme` | `str` | `"sddm-astronaut-theme"` | SDDM theme name. Must exist in [`hydenix/sources/sddm/`](https://github.com/ClementBobin/hydenix/tree/main/hydenix/sources/sddm). |
+| `hydenix.sddm.theme` | `str` | `"sddm-astronaut-theme"` | SDDM theme name. Must exist in [`hydenix/sources/sddm/`](https://github.com/ClementBobin/hydenix/tree/dev/hydenix/sources/sddm). |
 
 Available SDDM themes: `"sddm-astronaut-theme"`, `"Agency"`.
 
@@ -691,7 +691,7 @@ Manages HyDE themes: installs selected theme packages, creates symlinks in `~/.c
 |---|---|---|---|
 | `hydenix.hm.theme.enable` | `bool` | `hydenix.hm.enable` | Enable the theme module. |
 | `hydenix.hm.theme.active` | `str` | `"Catppuccin Mocha"` | Name of the active theme to apply on login. |
-| `hydenix.hm.theme.themes` | `listOf str` | `["Catppuccin Mocha" "Catppuccin Latte"]` | Themes to install (must exist in [`hydenix/sources/themes/`](https://github.com/ClementBobin/hydenix/tree/main/hydenix/sources/themes)). |
+| `hydenix.hm.theme.themes` | `listOf str` | `["Catppuccin Mocha" "Catppuccin Latte"]` | Themes to install (must exist in [`hydenix/sources/themes/`](https://github.com/ClementBobin/hydenix/tree/dev/hydenix/sources/themes)). |
 | `hydenix.hm.theme.random` | `enum ["none" "theme" "wallpaper" "all"]` | `"none"` | Apply a random theme, wallpaper, or both on activation. |
 
 ```nix
@@ -731,7 +731,7 @@ Solarized-Dark   Soulsborne       Synth-Wave       Timeless-Dream
 Tokyo-Night      Tundra           Vanta-Black      Windows-11
 ```
 
-Browse source files: [hydenix/sources/themes/](https://github.com/ClementBobin/hydenix/tree/main/hydenix/sources/themes)
+Browse source files: [hydenix/sources/themes/](https://github.com/ClementBobin/hydenix/tree/dev/hydenix/sources/themes)
 
 </details>
 

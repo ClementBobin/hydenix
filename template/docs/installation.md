@@ -3,21 +3,47 @@
 # installation
 
 > [!CAUTION]
-> the templated flake is designed for a minimal install of nixos. install nixos first, then follow the instructions below.
+> the template flake is designed for a **minimal install of NixOS**. install NixOS first, then follow the steps below.
 
-## 1. initialize the flake template
+## 1. initialise the flake template
 
 ```bash
-# create a new directory and initialize the template
 mkdir hydenix && cd hydenix
 nix flake init -t github:ClementBobin/hydenix
 ```
 
+this copies the template into your current directory. you will find:
+
+```
+.
+├── configuration.nix        # NixOS system config — edit this first
+├── flake.nix                # flake inputs and outputs
+├── hardware-configuration.nix  # generated in step 3
+└── modules/
+    └── hm/
+        └── default.nix      # home-manager config — hydenix.hm.* options go here
+```
+
 ## 2. configure your system
 
-edit `configuration.nix` following the detailed comments:
+open `configuration.nix` and set at minimum:
 
-- **optional:** see [module options](./options.md) for advanced configuration
+```nix
+hydenix = {
+  enable   = true;
+  hostname = "my-machine";   # your hostname
+  timezone = "Europe/Paris"; # your timezone
+  locale   = "fr_FR.UTF-8"; # your locale
+};
+```
+
+then open `modules/hm/default.nix` and enable home-manager:
+
+```nix
+hydenix.hm.enable = true;
+```
+
+see [module options](./options.md) for the full list of available options and examples.
 
 ## 3. generate hardware configuration
 
@@ -25,40 +51,39 @@ edit `configuration.nix` following the detailed comments:
 sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
 ```
 
-## 4. initialize git repository
+## 4. initialise a git repository
 
 ```bash
 git init && git add .
 ```
 
-we do this because flakes must be managed via git. and its good practice to version control your configuration
+flakes require all files to be tracked by git. this is also good practice for version-controlling your configuration.
 
-## 5. build and switch to the new configuration
+## 5. build and switch
 
 ```bash
 sudo nixos-rebuild switch --flake .#hydenix
 ```
 
 > [!NOTE]
-> if you made mistakes, it will fail here. try following:
+> if the build fails, read the error carefully — it usually tells you exactly what is wrong. also see:
 >
-> - read the error carefully, it may be self-explanatory
-> - troubleshooting steps in [troubleshooting & issues](./troubleshooting.md)
-> - read the [faq](./faq.md), it may have the answer you're looking for
-> - please don't hesitate to ask in [discord](https://discord.gg/AYbJ9MJez7) or [github discussions](https://github.com/ClementBobin/hydenix/discussions)!
+> - [troubleshooting](./troubleshooting.md)
+> - [faq](./faq.md)
+> - [discord](https://discord.gg/AYbJ9MJez7) or [github discussions](https://github.com/ClementBobin/hydenix/discussions)
 
-## 6. launch hydenix
+## 6. reboot and log in
 
-reboot and log in.
+reboot your machine, log in through SDDM, and you are running hydenix.
 
 > [!IMPORTANT]
-> do not forget to set your password
+> if this is a fresh NixOS install, set your user password before logging out:
 >
 > ```bash
 > passwd
 > ```
 
-you can generate the theme cache with the below:
+once logged in, regenerate the theme cache:
 
 ```bash
 hyde-shell reload

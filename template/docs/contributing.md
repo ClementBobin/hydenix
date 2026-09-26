@@ -2,19 +2,29 @@
 
 # contributing
 
-this project uses [direnv](https://direnv.net/) for pre-commit hooks. please install it first:
+contributions of all kinds are welcome — bug fixes, new themes, documentation improvements, and new module options.
 
-- **nix**: `nix-env -iA nixpkgs.direnv`
-- **macos**: `brew install direnv`
-- **ubuntu/debian**: `apt-get install direnv`
+## dev environment
 
-then run `direnv allow` to enable the hooks
-
-more documentation on the codebase can be found at [template README](template/README.md)
-
-this project enforces [conventional commits](https://www.conventionalcommits.org/) format for all commit messages. each commit message must follow this structure:
+this project uses [direnv](https://direnv.net/) for pre-commit hooks (formatting, commit-lint).
 
 ```bash
+# install direnv
+nix-env -iA nixpkgs.direnv        # nix
+brew install direnv                 # macOS
+apt-get install direnv              # Debian/Ubuntu
+
+# enable hooks in the repo
+direnv allow
+```
+
+more information about the codebase is in the [template README](../.https://github.com/ClementBobin/hydenix/template/README.md).
+
+## commit format
+
+this project enforces [conventional commits](https://www.conventionalcommits.org/). every commit must follow:
+
+```
 type(optional-scope): subject
 
 [optional body]
@@ -22,44 +32,53 @@ type(optional-scope): subject
 [optional footer(s)]
 ```
 
-where:
+**type** — must be one of:
 
-- **type** must be one of:
-  - `feat`: A new feature
-  - `fix`: A bug fix
-  - `docs`: Documentation changes
-  - `style`: Code style changes (formatting, etc)
-  - `refactor`: Code changes that neither fix bugs nor add features
-  - `perf`: Performance improvements
-  - `test`: Adding or modifying tests
-  - `chore`: Maintenance tasks
+| type | when to use |
+|---|---|
+| `feat` | a new feature |
+| `fix` | a bug fix |
+| `docs` | documentation-only changes |
+| `style` | formatting, whitespace, no logic change |
+| `refactor` | code change that is neither a fix nor a feature |
+| `perf` | performance improvement |
+| `test` | adding or updating tests |
+| `chore` | maintenance, dependency updates |
 
-- **scope** is optional but if used:
-  - must be lowercase
-  - should be descriptive of the area of change
-  - examples: vm, themes, home, cli, docs, etc.
+**scope** — optional, lowercase, describes the area changed. examples: `vm`, `themes`, `hm`, `shell`, `docs`, `sddm`.
 
-- **subject** must:
-  - not end with a period
-  - be descriptive
+**subject** — must not end with a period and must be descriptive.
 
-examples:
+**examples:**
 
-- `feat(vm): add support for fedora vm configuration`
-- `fix: correct wallpaper path in material theme`
-- `docs: update installation instructions`
-- `chore: update dependencies`
+```
+feat(themes): add Tokyo-Night theme source
+fix(shell): correct zsh plugin loading order
+docs(options): document hyprland.shaders.overrides
+chore: update nixpkgs input
+```
 
-## pull requests
+the changelog is generated automatically from these messages — well-formatted commits make the history useful for everyone.
+
+## pull request process
 
 1. fork the repository
-2. create your feature branch (`git checkout -b feature/amazing-feature`)
-3. commit your changes using conventional commits
-4. push to the branch (`git push origin feature/amazing-feature`)
-5. open a pull request
+2. create a feature branch: `git checkout -b feat/my-thing`
+3. make your changes and commit using conventional commits
+4. push: `git push origin feat/my-thing`
+5. open a pull request against the `dev` branch
 
-## changelog
+> [!NOTE]
+> target the `dev` branch, not `main`. `main` is only updated on release.
 
-the changelog is automatically generated from commit messages. clear, well-formatted commit messages ensure your changes are properly documented.
+## adding a theme
 
-for more details, see the [conventional commits specification](https://www.conventionalcommits.org/).
+1. add a `.nix` file under [`hydenix/sources/themes/`](https://github.com/ClementBobin/hydenix/tree/dev/hydenix/sources/themes) following the existing files as a template.
+2. register the theme in [`hydenix/sources/themes/default.nix`](https://github.com/ClementBobin/hydenix/blob/dev/hydenix/sources/themes/default.nix).
+3. open a PR with a commit like `feat(themes): add My-Theme`.
+
+## adding an SDDM theme
+
+1. add a `.nix` file under [`hydenix/sources/sddm/`](https://github.com/ClementBobin/hydenix/tree/dev/hydenix/sources/sddm).
+2. register it in [`hydenix/sources/sddm/default.nix`](https://github.com/ClementBobin/hydenix/blob/dev/hydenix/sources/sddm/default.nix).
+3. update the `hydenix.sddm.theme` enum in the module options if needed.
